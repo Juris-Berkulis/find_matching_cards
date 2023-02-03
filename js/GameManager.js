@@ -1,8 +1,8 @@
 class GameManager {
     #boardElement;
     #scoreElement;
-    #failElement
-    #desc = new Desc();
+    #failElement;
+    #desc;
     #firstSelectedCard = null;
     #secondSelectedCard = null;
     #attemptNumber = 0;
@@ -39,10 +39,10 @@ class GameManager {
         });
     };
 
-    startGame () {
+    startGame (cardsCount) {
         this.attemptNumber = 0;
         this.failCount = 0;
-        this.#desc = new Desc();
+        this.#desc = new Desc(cardsCount);
         this.#boardElement.innerHTML = '';
         this.shuffleAndDeal();
     };

@@ -1,4 +1,5 @@
 class Desc {
+    #cardsCount;
     #frontSidesOfTheCards = [
         'red', 
         'orange', 
@@ -22,7 +23,10 @@ class Desc {
     // };
 
     //* Вариант 2:
-    constructor () {
+    constructor (cardsCount) {
+        this.buildListWithFrontSidesOfTheCards();
+        this.#cardsCount = cardsCount;
+        this.#frontSidesOfTheCards.length = this.#cardsCount / 2;
         this.cards = [
             ...this.#frontSidesOfTheCards, 
             ...this.#frontSidesOfTheCards,
@@ -30,6 +34,15 @@ class Desc {
             return new Card(card)
         });
     };
+
+    buildListWithFrontSidesOfTheCards () {
+        for (let i=0; i < 10; i++) {
+            const red = (Math.random() * 255).toFixed(0);
+            const green = (Math.random() * 255).toFixed(0);
+            const blue = (Math.random() * 255).toFixed(0);
+            this.#frontSidesOfTheCards.unshift(`rgb(${red}, ${green}, ${blue})`)
+        }
+    }
 
     shuffleCards () {
         this.cards.sort(() => Math.random() - 0.5);

@@ -4,14 +4,34 @@
     box-sizing: border-box;
 }
 
+button {
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #333333;
+    color: #333333;
+    background-color: #efefef;
+    &:hover {
+        color: #efefef;
+        background-color: #aaaaaa;
+    }
+    &:disabled {
+        border: 1px solid #999999;
+        color: #999999;
+        background-color: #dddddd;
+        cursor: default;
+    }
+}
+
 .main {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
     background-color: #cccccc;
 }
 
 .controlPanel {
-    height: 10vh;
+    min-height: 10vh;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -19,17 +39,28 @@
     align-items: center;
 }
 
+.cardsCountPanel {
+    display: flex;
+}
+
+.cardsCountBtn {
+    flex-shrink: 0;
+    border-radius: 0;
+    cursor: pointer;
+}
+
 .startGameBtn {
     cursor: pointer;
 }
 
 .board {
-    height: 90vh;
+    flex-grow: 1;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
+    padding-bottom: 5px;
 }
 
 .card {
