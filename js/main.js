@@ -7,6 +7,8 @@ const rememberFieldButton = document.getElementById('rememberField');
 const gameManager = new GameManager(board, score, fail);
 gameManager.startGame();
 
+let intervalIdForCountdown;
+
 const clickCard = (event) => {
     const clickedCard = event.target.connectedCard;
 
@@ -24,6 +26,8 @@ const clickCard = (event) => {
 board.addEventListener('click', clickCard);
 
 startGameButton.addEventListener('click', () => {
+    clearInterval(intervalIdForCountdown);
+
     gameManager.startGame();
 
     board.addEventListener('click', clickCard);
@@ -54,6 +58,8 @@ const flipAllCards = () => {
 };
 
 const closeCards = () => {
+    clearInterval(intervalIdForCountdown);
+
     flipAllCards();
 
     rememberFieldButton.removeEventListener('click', closeCards);
@@ -71,7 +77,18 @@ const openCards = () => {
     rememberFieldButton.removeEventListener('click', openCards);
     rememberFieldButton.addEventListener('click', closeCards);
 
-    rememberFieldButton.innerHTML = 'Скрыть';
+    let count = 10;
+    rememberFieldButton.innerHTML = `Скрыть ${count.toFixed(2)}`;
+
+    const interval = 0.01;
+    intervalIdForCountdown = setInterval(() => {
+        count = count - interval;
+        rememberFieldButton.innerHTML = `Скрыть ${count.toFixed(2)}`;
+
+        if (count <= 0) {
+            closeCards();
+        }
+    }, interval * 1000);
 };
 
 rememberFieldButton.addEventListener('click', openCards);
