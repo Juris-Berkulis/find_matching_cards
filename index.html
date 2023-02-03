@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory game</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./js/Card.js" defer></script>
+    <script src="./js/Desk.js" defer></script>
+    <script src="./js/GameManager.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+    <div class="main">
+        <div class="controlPanel" id="controlPanel">
+            <button class="startGameBtn" id="startGame">Новая игра</button>
+            <p>
+                <span>Попытка: </span>
+                <span id="attemptNumber"></span>
+            </p>
+            <p>
+                <span>Ошибки: </span>
+                <span id="failCount"></span>
+            </p>
+        </div>
+        <div class="board" id="board"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+class GameManager {
+    #boardElement;
+    #scoreElement;
+    #failElement
+    #desc = new Desc();
+    #firstSelectedCard = null;
+    #secondSelectedCard = null;
+    #attemptNumber = 0;
+    #failCount = 0;
+
+    constructor (board, score, fail) {
+        this.#boardElement = board;
+        this.#scoreElement = score;
+        this.#failElement = fail;
+    };
+
+    get attemptNumber () {
+        return this.#attemptNumber
+    };
+
+    set attemptNumber (value) {
+        this.#attemptNumber = value;
+        this.#scoreElement.innerHTML = value;
+    };
+
+    get failCount () {
+        return this.#failCount
+    };
+
+    set failCount (value) {
+        this.#failCount = value;
+        this.#failElement.innerHTML = value;
+    };
+
+    shuffleAndDeal () {
+        this.#desc.shuffleCards();
+        this.#desc.cards.forEach((card) => {
+            this.#boardElement.append(card.getDomElement);
+        });
+    };
+
+    startGame () {
+        this.attemptNumber = 0;
+        this.failCount = 0;
+        this.#desc = new Desc();
+        this.#boardElement.innerHTML = '';
+        this.shuffleAndDeal();
+    };
+
+    selectCard (card) {
+        if (card === this.#firstSelectedCard) {
+            return
+        }
+
+        card.flipCard();
+
+        if (this.#firstSelectedCard && this.#secondSelectedCard) {
+            this.#firstSelectedCard.flipCard();
+            this.#secondSelectedCard.flipCard();
+
+            this.#firstSelectedCard = null;
+            this.#secondSelectedCard = null;
+        }
+
+        if (this.#firstSelectedCard === null) {
+            this.attemptNumber++;
+            this.#firstSelectedCard = card;
+        } else if (this.#secondSelectedCard === null) {
+            this.#secondSelectedCard = card;
+
+            if (this.#firstSelectedCard.getFrontSideOfTheCard === card.getFrontSideOfTheCard) {
+                this.#desc.removeCard(this.#firstSelectedCard);
+                this.#desc.removeCard(this.#secondSelectedCard);
+
+                this.#firstSelectedCard = null;
+                this.#secondSelectedCard = null;
+            } else {
+                this.failCount++;
+            }
+        }
+
+        if (!this.#desc.cards.length) {
+            const timerId = setTimeout(() => {
+                alert(`Вы победили!\nКоличество ходов: ${this.attemptNumber}.\nКоличество ошибок: ${this.failCount}.`);
+
+                clearTimeout(timerId);
+            }, 1000);
+        }
+    }
+};
