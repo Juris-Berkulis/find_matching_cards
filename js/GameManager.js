@@ -7,11 +7,15 @@ class GameManager {
     #secondSelectedCard = null;
     #attemptNumber = 0;
     #failCount = 0;
+    #cardsCount = 20;
+    #cardsCountBtnsPanel = document.getElementById('cardsCountPanel');
 
     constructor (board, score, fail) {
         this.#boardElement = board;
         this.#scoreElement = score;
         this.#failElement = fail;
+        this.findCardsCount();
+        this.activeCardsCountBtnsPanel()
     };
 
     get attemptNumber () {
@@ -32,6 +36,10 @@ class GameManager {
         this.#failElement.innerHTML = value;
     };
 
+    set cardsCount (value) {
+        return this.#cardsCount = value;
+    }
+
     shuffleAndDeal () {
         this.#desc.shuffleCards();
         this.#desc.cards.forEach((card) => {
@@ -39,10 +47,10 @@ class GameManager {
         });
     };
 
-    startGame (cardsCount) {
+    startGame () {
         this.attemptNumber = 0;
         this.failCount = 0;
-        this.#desc = new Desc(cardsCount);
+        this.#desc = new Desc(this.#cardsCount);
         this.#boardElement.innerHTML = '';
         this.shuffleAndDeal();
     };
@@ -86,5 +94,29 @@ class GameManager {
                 clearTimeout(timerId);
             }, 1000);
         }
+    }
+
+    findCardsCount () {
+        if (this.#cardsCountBtnsPanel.children) {
+            for (let i=0; i < this.#cardsCountBtnsPanel.children.length; i++) {
+                if (+this.#cardsCountBtnsPanel.children[i].textContent === +this.#cardsCount) {
+                    this.#cardsCountBtnsPanel.children[i].disabled = 'true';
+                } else {
+                    this.#cardsCountBtnsPanel.children[i].removeAttribute('disabled');
+                }
+            }
+        }
+    };
+    
+    selectCardsCount (event) {
+        if (event.target.classList.contains('cardsCountBtn')) {
+            this.cardsCount = +event.target.textContent;
+        }
+    
+        this.findCardsCount();
+    };
+    
+    activeCardsCountBtnsPanel () {
+        this.#cardsCountBtnsPanel.addEventListener('click', (event) => this.selectCardsCount(event));
     }
 };

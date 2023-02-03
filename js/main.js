@@ -3,12 +3,9 @@ const score = document.getElementById('attemptNumber');
 const fail = document.getElementById('failCount');
 const startGameButton = document.getElementById('startGame');
 const rememberFieldButton = document.getElementById('rememberField');
-const cardsCountBtnsPanel = document.getElementById('cardsCountPanel');
-
-let cardsCount = 20;
 
 const gameManager = new GameManager(board, score, fail);
-gameManager.startGame(cardsCount);
+gameManager.startGame();
 
 let intervalIdForCountdown;
 
@@ -31,7 +28,7 @@ board.addEventListener('click', clickCard);
 startGameButton.addEventListener('click', () => {
     clearInterval(intervalIdForCountdown);
 
-    gameManager.startGame(cardsCount);
+    gameManager.startGame();
 
     board.addEventListener('click', clickCard);
     setButtonForFlipAllCardsIsAbled();
@@ -95,28 +92,3 @@ const openCards = () => {
 };
 
 rememberFieldButton.addEventListener('click', openCards);
-
-const findCardsCount = () => {
-    if (cardsCountBtnsPanel.children) {
-        for (let i=0; i < cardsCountBtnsPanel.children.length; i++) {
-            console.log(+cardsCountBtnsPanel.children[i].textContent)
-            console.log(+cardsCount)
-            if (+cardsCountBtnsPanel.children[i].textContent === +cardsCount) {
-                cardsCountBtnsPanel.children[i].disabled = 'true';
-            } else {
-                cardsCountBtnsPanel.children[i].removeAttribute('disabled');
-            }
-        }
-    }
-};
-
-const selectCardsCount = (event) => {
-    if (event.target.classList.contains('cardsCountBtn')) {
-        cardsCount = +event.target.textContent;
-    }
-
-    findCardsCount();
-};
-
-findCardsCount();
-cardsCountBtnsPanel.addEventListener('click', selectCardsCount);
