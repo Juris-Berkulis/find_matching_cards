@@ -41,6 +41,7 @@ const setButtonForFlipAllCardsIsAbled = () => {
     rememberFieldButton.style.cursor = 'pointer';
     rememberFieldButton.removeAttribute('disabled');
 
+    rememberFieldButton.removeEventListener('click', closeCards);
     rememberFieldButton.addEventListener('click', openCards);
 };
 
