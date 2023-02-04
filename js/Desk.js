@@ -2,15 +2,22 @@ class Desc {
     #cardsCount;
     #frontSidesOfTheCards = [
         'red', 
-        'orange', 
         'yellow', 
         'green', 
         'cyan', 
         'blue', 
+        'orange', 
         'blueviolet', 
         'azure', 
         'brown', 
         'pink',
+        'lime',
+        'deeppink',
+        'burlywood',
+        'olive',
+        'saddlebrown',
+        'midnightblue',
+        'palegreen',
     ];
 
     //* Вариант 1:
@@ -36,11 +43,11 @@ class Desc {
     };
 
     buildListWithFrontSidesOfTheCards () {
-        for (let i=0; i < 10; i++) {
+        for (let i=0; i < 3; i++) {
             const red = (Math.random() * 255).toFixed(0);
             const green = (Math.random() * 255).toFixed(0);
             const blue = (Math.random() * 255).toFixed(0);
-            this.#frontSidesOfTheCards.unshift(`rgb(${red}, ${green}, ${blue})`)
+            this.#frontSidesOfTheCards.push(`rgb(${red}, ${green}, ${blue})`)
         }
     }
 
