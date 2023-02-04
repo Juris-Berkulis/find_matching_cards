@@ -9,6 +9,7 @@
     <link rel="shortcut icon" type="image/icon" href="img/favicon.ico">
     <script src="./js/Card.js" defer></script>
     <script src="./js/Desk.js" defer></script>
+    <script src="./js/TheEndModal.js" defer></script>
     <script src="./js/GameManager.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
@@ -34,6 +35,16 @@
             <p id="elapsedTime"></p>
         </div>
         <div class="board" id="board"></div>
+        <div class="theEnd" id="theEnd"></div>
+        <div class="theEndModal" id="theEndModal">
+            <p class="theEndModalParagraph">Вы победили!</p>
+            <p class="theEndModalParagraph" id="theEndModalAttemptNumber"></p>
+            <p class="theEndModalParagraph" id="theEndModalFailCount"></p>
+            <p class="theEndModalParagraph" id="theEndModalElapsedTime"></p>
+            <div class="theEndModalCloseBtnWrapper">
+                <button class="theEndModalCloseBtn" id="theEndModalCloseBtn">Ok</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>

@@ -122,7 +122,7 @@ class GameManager {
             clearInterval(this.#intervalIdForElapsedTime);
 
             const timerId = setTimeout(() => {
-                alert(`Вы победили!\nКоличество ходов: ${this.attemptNumber}.\nКоличество ошибок: ${this.failCount}.\nЗатраченное время: ${this.formatElapsedTime(this.#elapsedTime)}.`);
+                new TheEndModal(this.attemptNumber, this.failCount, this.formatElapsedTime(this.#elapsedTime));
 
                 clearTimeout(timerId);
             }, 1000);

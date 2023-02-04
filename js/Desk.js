@@ -47,7 +47,7 @@ class Desc {
             const red = (Math.random() * 255).toFixed(0);
             const green = (Math.random() * 255).toFixed(0);
             const blue = (Math.random() * 255).toFixed(0);
-            this.#frontSidesOfTheCards.push(`rgb(${red}, ${green}, ${blue})`)
+            this.#frontSidesOfTheCards.push(`rgb(${red}, ${green}, ${blue})`);
         }
     }
 
