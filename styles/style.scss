@@ -4,6 +4,21 @@
     box-sizing: border-box;
 }
 
+@keyframes animation__bg__waves {
+    @for $i from 0 through 100 {
+        #{$i * 1%} {
+            background: linear-gradient(
+                to right,
+                #cccccc -100% #{($i - 65) * 1%},
+                #eeeeee #{($i - 55) * 1%} #{($i - 45) * 1%},
+                #cccccc #{($i - 35) * 1%} #{($i + 35) * 1%},
+                #eeeeee #{($i + 45) * 1%} #{($i + 55) * 1%},
+                #cccccc #{($i + 65) * 1%} 200%
+            );
+        }
+    }
+}
+
 button {
     padding: 5px;
     border-radius: 10px;
@@ -30,6 +45,7 @@ button {
     height: 100vh;
     width: 100vw;
     background-color: #cccccc;
+    animation: animation__bg__waves 5s linear 0.01s infinite normal both;;
 }
 
 .controlPanel {
