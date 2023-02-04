@@ -5,6 +5,14 @@
           box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100vh;
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: fill-available;
+}
+
 @-webkit-keyframes animation__bg__waves {
   0% {
     background: -webkit-gradient(linear, left top, right top, color-stop(-100%, #cccccc), color-stop(-55%, #eeeeee), color-stop(-35%, #cccccc), color-stop(45%, #eeeeee), color-stop(65%, #cccccc));
@@ -850,6 +858,9 @@ button:disabled {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100vh;
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: fill-available;
   width: 100vw;
   background-color: #cccccc;
   -webkit-animation: animation__bg__waves 5s linear 0.01s infinite normal both;
@@ -931,6 +942,9 @@ button:disabled {
   top: 0;
   left: 0;
   height: 100vh;
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: fill-available;
   width: 100vw;
   background-color: #55555555;
   cursor: pointer;

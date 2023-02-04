@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+html, 
+body {
+    height: 100vh;
+    height: fill-available;
+}
+
 @keyframes animation__bg__waves {
     @for $i from 0 through 100 {
         #{$i * 1%} {
@@ -43,6 +49,7 @@ button {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    height: fill-available;
     width: 100vw;
     background-color: #cccccc;
     animation: animation__bg__waves 5s linear 0.01s infinite normal both;;
@@ -99,6 +106,7 @@ button {
     top: 0;
     left: 0;
     height: 100vh;
+    height: fill-available;
     width: 100vw;
     background-color: #55555555;
     cursor: pointer;
