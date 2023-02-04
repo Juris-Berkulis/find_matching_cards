@@ -9,6 +9,10 @@ class GameManager {
     #failCount = 0;
     #cardsCount = 20;
     #cardsCountBtnsPanel = document.getElementById('cardsCountPanel');
+    #elapsedTimeElement = document.getElementById('elapsedTime');
+    #elapsedTime = 0;
+    #startTimerBoolean = false;
+    #intervalIdForElapsedTime;
 
     constructor (board, score, fail) {
         this.#boardElement = board;
@@ -47,15 +51,42 @@ class GameManager {
         });
     };
 
+    formatElapsedTime (time) {
+        return `${(time - time % 3600) / 3600 ? `${(time - time % 3600) / 3600}:` : ''}${((time - time % 60) - (time - time % 3600)) / 60 >= 10 ? ((time - time % 60) - (time - time % 3600)) / 60 : `0${((time - time % 60) - (time - time % 3600)) / 60}`}:${time % 60 >= 10 ? time % 60 : `0${time % 60}`}`
+    }
+
+    resetTimer () {
+        clearInterval(this.#intervalIdForElapsedTime);
+        this.#startTimerBoolean = false;
+        this.#elapsedTime = 0;
+        this.#elapsedTimeElement.innerHTML = this.formatElapsedTime(this.#elapsedTime);
+    }
+
     startGame () {
+        this.resetTimer();
         this.attemptNumber = 0;
         this.failCount = 0;
+        this.#firstSelectedCard = null;
+        this.#secondSelectedCard = null;
         this.#desc = new Desc(this.#cardsCount);
         this.#boardElement.innerHTML = '';
         this.shuffleAndDeal();
     };
 
+    startElapsedTime () {
+        this.#intervalIdForElapsedTime = setInterval(() => {
+            this.#elapsedTime++;
+            this.#elapsedTimeElement.innerHTML = this.formatElapsedTime(this.#elapsedTime);
+        }, 1000);
+    };
+
     selectCard (card) {
+        if (!this.#startTimerBoolean) {
+            this.startElapsedTime();
+
+            this.#startTimerBoolean = true;
+        }
+
         if (card === this.#firstSelectedCard) {
             return
         }
@@ -88,8 +119,10 @@ class GameManager {
         }
 
         if (!this.#desc.cards.length) {
+            clearInterval(this.#intervalIdForElapsedTime);
+
             const timerId = setTimeout(() => {
-                alert(`Вы победили!\nКоличество ходов: ${this.attemptNumber}.\nКоличество ошибок: ${this.failCount}.`);
+                alert(`Вы победили!\nКоличество ходов: ${this.attemptNumber}.\nКоличество ошибок: ${this.failCount}.\nЗатраченное время: ${this.formatElapsedTime(this.#elapsedTime)}.`);
 
                 clearTimeout(timerId);
             }, 1000);
