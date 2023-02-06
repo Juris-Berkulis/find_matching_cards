@@ -68,6 +68,7 @@ module.exports = {
         port: 4200,
         hot: isDev
     },
+    devtool: isDev ? 'source-map' : 'eval',
     plugins: [
         new HTMLWebpackPlugin({
             template: './index.html',
@@ -83,19 +84,19 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.css$/i,
                 use: cssLoaders(),
             },
             {
-                test: /\.s[ac]ss$/,
+                test: /\.s[ac]ss$/i,
                 use: cssLoaders('sass-loader'),
             },
             {
-                test: /\.(png|jpeg|jpg|svg|gif)$/,
+                test: /\.(png|jpeg|jpg|svg|gif)$/i,
                 use: ['file-loader']
             },
             {
-                test: /\.m?js$/,
+                test: /\.m?js$/i,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',

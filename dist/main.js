@@ -1,11 +1,3 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
@@ -16,7 +8,84 @@
   \********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ Card; }\n/* harmony export */ });\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; return _typeof = \"function\" == typeof Symbol && \"symbol\" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && \"function\" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }, _typeof(obj); }\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, \"prototype\", { writable: false }); return Constructor; }\nfunction _toPropertyKey(arg) { var key = _toPrimitive(arg, \"string\"); return _typeof(key) === \"symbol\" ? key : String(key); }\nfunction _toPrimitive(input, hint) { if (_typeof(input) !== \"object\" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || \"default\"); if (_typeof(res) !== \"object\") return res; throw new TypeError(\"@@toPrimitive must return a primitive value.\"); } return (hint === \"string\" ? String : Number)(input); }\nfunction _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }\nfunction _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError(\"Cannot initialize the same private elements twice on an object\"); } }\nfunction _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, \"get\"); return _classApplyDescriptorGet(receiver, descriptor); }\nfunction _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }\nfunction _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, \"set\"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }\nfunction _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError(\"attempted to \" + action + \" private field on non-instance\"); } return privateMap.get(receiver); }\nfunction _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError(\"attempted to set read only private field\"); } descriptor.value = value; } }\nvar _bgColor = /*#__PURE__*/new WeakMap();\nvar _domElement = /*#__PURE__*/new WeakMap();\nvar _isShowCard = /*#__PURE__*/new WeakMap();\nvar Card = /*#__PURE__*/function () {\n  function Card(bgColor) {\n    _classCallCheck(this, Card);\n    _classPrivateFieldInitSpec(this, _bgColor, {\n      writable: true,\n      value: void 0\n    });\n    _classPrivateFieldInitSpec(this, _domElement, {\n      writable: true,\n      value: void 0\n    });\n    _classPrivateFieldInitSpec(this, _isShowCard, {\n      writable: true,\n      value: false\n    });\n    _classPrivateFieldSet(this, _bgColor, bgColor);\n    _classPrivateFieldSet(this, _domElement, document.createElement('div'));\n    _classPrivateFieldGet(this, _domElement).classList.add('card');\n    _classPrivateFieldGet(this, _domElement).style.backgroundColor = \"\".concat(this.getReverseSideOfTheCard);\n    _classPrivateFieldGet(this, _domElement).connectedCard = this;\n  }\n  _createClass(Card, [{\n    key: \"getReverseSideOfTheCard\",\n    get: function get() {\n      return '#555555';\n    }\n  }, {\n    key: \"getFrontSideOfTheCard\",\n    get: function get() {\n      return _classPrivateFieldGet(this, _bgColor);\n    }\n  }, {\n    key: \"getDomElement\",\n    get: function get() {\n      return _classPrivateFieldGet(this, _domElement);\n    }\n  }, {\n    key: \"flipCard\",\n    value: function flipCard() {\n      _classPrivateFieldSet(this, _isShowCard, !_classPrivateFieldGet(this, _isShowCard));\n      if (_classPrivateFieldGet(this, _isShowCard)) {\n        _classPrivateFieldGet(this, _domElement).style.backgroundColor = this.getFrontSideOfTheCard;\n        _classPrivateFieldGet(this, _domElement).classList.add('card_open');\n      } else {\n        _classPrivateFieldGet(this, _domElement).style.backgroundColor = this.getReverseSideOfTheCard;\n        _classPrivateFieldGet(this, _domElement).classList.remove('card_open');\n      }\n    }\n  }, {\n    key: \"disconnectedFromDOM\",\n    value: function disconnectedFromDOM() {\n      _classPrivateFieldGet(this, _domElement).connectedCard = null;\n    }\n  }]);\n  return Card;\n}();\n\n;\n\n//# sourceURL=webpack:///./js/Card.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Card; }
+/* harmony export */ });
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
+function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
+function _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get"); return _classApplyDescriptorGet(receiver, descriptor); }
+function _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }
+function _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }
+function _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError("attempted to " + action + " private field on non-instance"); } return privateMap.get(receiver); }
+function _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError("attempted to set read only private field"); } descriptor.value = value; } }
+var _bgColor = /*#__PURE__*/new WeakMap();
+var _domElement = /*#__PURE__*/new WeakMap();
+var _isShowCard = /*#__PURE__*/new WeakMap();
+var Card = /*#__PURE__*/function () {
+  function Card(bgColor) {
+    _classCallCheck(this, Card);
+    _classPrivateFieldInitSpec(this, _bgColor, {
+      writable: true,
+      value: void 0
+    });
+    _classPrivateFieldInitSpec(this, _domElement, {
+      writable: true,
+      value: void 0
+    });
+    _classPrivateFieldInitSpec(this, _isShowCard, {
+      writable: true,
+      value: false
+    });
+    _classPrivateFieldSet(this, _bgColor, bgColor);
+    _classPrivateFieldSet(this, _domElement, document.createElement('div'));
+    _classPrivateFieldGet(this, _domElement).classList.add('card');
+    _classPrivateFieldGet(this, _domElement).style.backgroundColor = "".concat(this.getReverseSideOfTheCard);
+    _classPrivateFieldGet(this, _domElement).connectedCard = this;
+  }
+  _createClass(Card, [{
+    key: "getReverseSideOfTheCard",
+    get: function get() {
+      return '#555555';
+    }
+  }, {
+    key: "getFrontSideOfTheCard",
+    get: function get() {
+      return _classPrivateFieldGet(this, _bgColor);
+    }
+  }, {
+    key: "getDomElement",
+    get: function get() {
+      return _classPrivateFieldGet(this, _domElement);
+    }
+  }, {
+    key: "flipCard",
+    value: function flipCard() {
+      _classPrivateFieldSet(this, _isShowCard, !_classPrivateFieldGet(this, _isShowCard));
+      if (_classPrivateFieldGet(this, _isShowCard)) {
+        _classPrivateFieldGet(this, _domElement).style.backgroundColor = this.getFrontSideOfTheCard;
+        _classPrivateFieldGet(this, _domElement).classList.add('card_open');
+      } else {
+        _classPrivateFieldGet(this, _domElement).style.backgroundColor = this.getReverseSideOfTheCard;
+        _classPrivateFieldGet(this, _domElement).classList.remove('card_open');
+      }
+    }
+  }, {
+    key: "disconnectedFromDOM",
+    value: function disconnectedFromDOM() {
+      _classPrivateFieldGet(this, _domElement).connectedCard = null;
+    }
+  }]);
+  return Card;
+}();
+
+;
 
 /***/ }),
 
@@ -26,7 +95,94 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ Desc; }\n/* harmony export */ });\n/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Card */ \"./js/Card.js\");\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; return _typeof = \"function\" == typeof Symbol && \"symbol\" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && \"function\" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }, _typeof(obj); }\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); }\nfunction _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === \"string\") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === \"Object\" && o.constructor) n = o.constructor.name; if (n === \"Map\" || n === \"Set\") return Array.from(o); if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }\nfunction _iterableToArray(iter) { if (typeof Symbol !== \"undefined\" && iter[Symbol.iterator] != null || iter[\"@@iterator\"] != null) return Array.from(iter); }\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }\nfunction _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, \"prototype\", { writable: false }); return Constructor; }\nfunction _toPropertyKey(arg) { var key = _toPrimitive(arg, \"string\"); return _typeof(key) === \"symbol\" ? key : String(key); }\nfunction _toPrimitive(input, hint) { if (_typeof(input) !== \"object\" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || \"default\"); if (_typeof(res) !== \"object\") return res; throw new TypeError(\"@@toPrimitive must return a primitive value.\"); } return (hint === \"string\" ? String : Number)(input); }\nfunction _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }\nfunction _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError(\"Cannot initialize the same private elements twice on an object\"); } }\nfunction _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, \"get\"); return _classApplyDescriptorGet(receiver, descriptor); }\nfunction _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }\nfunction _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, \"set\"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }\nfunction _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError(\"attempted to \" + action + \" private field on non-instance\"); } return privateMap.get(receiver); }\nfunction _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError(\"attempted to set read only private field\"); } descriptor.value = value; } }\n\nvar _cardsCount = /*#__PURE__*/new WeakMap();\nvar _frontSidesOfTheCards = /*#__PURE__*/new WeakMap();\nvar Desc = /*#__PURE__*/function () {\n  //* Вариант 1:\n  // constructor () {\n  //     this.cards = [];\n  //     this.#frontSidesOfTheCards.forEach((frontSideOfTheCard) => {\n  //         this.cards.push(new Card(frontSideOfTheCard));\n  //         this.cards.push(new Card(frontSideOfTheCard));\n  //     });\n  // };\n\n  //* Вариант 2:\n  function Desc(cardsCount) {\n    _classCallCheck(this, Desc);\n    _classPrivateFieldInitSpec(this, _cardsCount, {\n      writable: true,\n      value: void 0\n    });\n    _classPrivateFieldInitSpec(this, _frontSidesOfTheCards, {\n      writable: true,\n      value: ['red', 'yellow', 'green', 'cyan', 'blue', 'orange', 'blueviolet', 'azure', 'brown', 'pink', 'lime', 'deeppink', 'burlywood', 'olive', 'saddlebrown', 'midnightblue', 'palegreen']\n    });\n    this.buildListWithFrontSidesOfTheCards();\n    _classPrivateFieldSet(this, _cardsCount, cardsCount);\n    _classPrivateFieldGet(this, _frontSidesOfTheCards).length = _classPrivateFieldGet(this, _cardsCount) / 2;\n    this.cards = [].concat(_toConsumableArray(_classPrivateFieldGet(this, _frontSidesOfTheCards)), _toConsumableArray(_classPrivateFieldGet(this, _frontSidesOfTheCards))).map(function (card) {\n      return new _Card__WEBPACK_IMPORTED_MODULE_0__[\"default\"](card);\n    });\n  }\n  _createClass(Desc, [{\n    key: \"buildListWithFrontSidesOfTheCards\",\n    value: function buildListWithFrontSidesOfTheCards() {\n      for (var i = 0; i < 3; i++) {\n        var red = (Math.random() * 255).toFixed(0);\n        var green = (Math.random() * 255).toFixed(0);\n        var blue = (Math.random() * 255).toFixed(0);\n        _classPrivateFieldGet(this, _frontSidesOfTheCards).push(\"rgb(\".concat(red, \", \").concat(green, \", \").concat(blue, \")\"));\n      }\n    }\n  }, {\n    key: \"shuffleCards\",\n    value: function shuffleCards() {\n      this.cards.sort(function () {\n        return Math.random() - 0.5;\n      });\n    }\n  }, {\n    key: \"removeCard\",\n    value: function removeCard(card) {\n      var indexCard = this.cards.findIndex(function (item) {\n        return item.getFrontSideOfTheCard === card.getFrontSideOfTheCard;\n      });\n      if (indexCard !== -1) {\n        this.cards.splice(indexCard, 1);\n        card.disconnectedFromDOM();\n      }\n    }\n  }]);\n  return Desc;\n}();\n\n;\n\n//# sourceURL=webpack:///./js/Desk.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Desc; }
+/* harmony export */ });
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Card */ "./js/Card.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
+function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
+function _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get"); return _classApplyDescriptorGet(receiver, descriptor); }
+function _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }
+function _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }
+function _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError("attempted to " + action + " private field on non-instance"); } return privateMap.get(receiver); }
+function _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError("attempted to set read only private field"); } descriptor.value = value; } }
+
+var _cardsCount = /*#__PURE__*/new WeakMap();
+var _frontSidesOfTheCards = /*#__PURE__*/new WeakMap();
+var Desc = /*#__PURE__*/function () {
+  //* Вариант 1:
+  // constructor () {
+  //     this.cards = [];
+  //     this.#frontSidesOfTheCards.forEach((frontSideOfTheCard) => {
+  //         this.cards.push(new Card(frontSideOfTheCard));
+  //         this.cards.push(new Card(frontSideOfTheCard));
+  //     });
+  // };
+
+  //* Вариант 2:
+  function Desc(cardsCount) {
+    _classCallCheck(this, Desc);
+    _classPrivateFieldInitSpec(this, _cardsCount, {
+      writable: true,
+      value: void 0
+    });
+    _classPrivateFieldInitSpec(this, _frontSidesOfTheCards, {
+      writable: true,
+      value: ['red', 'yellow', 'green', 'cyan', 'blue', 'orange', 'blueviolet', 'azure', 'brown', 'pink', 'lime', 'deeppink', 'burlywood', 'olive', 'saddlebrown', 'midnightblue', 'palegreen']
+    });
+    this.buildListWithFrontSidesOfTheCards();
+    _classPrivateFieldSet(this, _cardsCount, cardsCount);
+    _classPrivateFieldGet(this, _frontSidesOfTheCards).length = _classPrivateFieldGet(this, _cardsCount) / 2;
+    this.cards = [].concat(_toConsumableArray(_classPrivateFieldGet(this, _frontSidesOfTheCards)), _toConsumableArray(_classPrivateFieldGet(this, _frontSidesOfTheCards))).map(function (card) {
+      return new _Card__WEBPACK_IMPORTED_MODULE_0__["default"](card);
+    });
+  }
+  _createClass(Desc, [{
+    key: "buildListWithFrontSidesOfTheCards",
+    value: function buildListWithFrontSidesOfTheCards() {
+      for (var i = 0; i < 3; i++) {
+        var red = (Math.random() * 255).toFixed(0);
+        var green = (Math.random() * 255).toFixed(0);
+        var blue = (Math.random() * 255).toFixed(0);
+        _classPrivateFieldGet(this, _frontSidesOfTheCards).push("rgb(".concat(red, ", ").concat(green, ", ").concat(blue, ")"));
+      }
+    }
+  }, {
+    key: "shuffleCards",
+    value: function shuffleCards() {
+      this.cards.sort(function () {
+        return Math.random() - 0.5;
+      });
+    }
+  }, {
+    key: "removeCard",
+    value: function removeCard(card) {
+      var indexCard = this.cards.findIndex(function (item) {
+        return item.getFrontSideOfTheCard === card.getFrontSideOfTheCard;
+      });
+      if (indexCard !== -1) {
+        this.cards.splice(indexCard, 1);
+        card.disconnectedFromDOM();
+      }
+    }
+  }]);
+  return Desc;
+}();
+
+;
 
 /***/ }),
 
@@ -36,7 +192,247 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ GameManager; }\n/* harmony export */ });\n/* harmony import */ var _Desk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Desk */ \"./js/Desk.js\");\n/* harmony import */ var _TheEndModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TheEndModal */ \"./js/TheEndModal.js\");\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; return _typeof = \"function\" == typeof Symbol && \"symbol\" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && \"function\" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }, _typeof(obj); }\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, \"prototype\", { writable: false }); return Constructor; }\nfunction _toPropertyKey(arg) { var key = _toPrimitive(arg, \"string\"); return _typeof(key) === \"symbol\" ? key : String(key); }\nfunction _toPrimitive(input, hint) { if (_typeof(input) !== \"object\" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || \"default\"); if (_typeof(res) !== \"object\") return res; throw new TypeError(\"@@toPrimitive must return a primitive value.\"); } return (hint === \"string\" ? String : Number)(input); }\nfunction _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }\nfunction _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError(\"Cannot initialize the same private elements twice on an object\"); } }\nfunction _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, \"get\"); return _classApplyDescriptorGet(receiver, descriptor); }\nfunction _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }\nfunction _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, \"set\"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }\nfunction _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError(\"attempted to \" + action + \" private field on non-instance\"); } return privateMap.get(receiver); }\nfunction _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError(\"attempted to set read only private field\"); } descriptor.value = value; } }\n\n\nvar _boardElement = /*#__PURE__*/new WeakMap();\nvar _scoreElement = /*#__PURE__*/new WeakMap();\nvar _failElement = /*#__PURE__*/new WeakMap();\nvar _desc = /*#__PURE__*/new WeakMap();\nvar _firstSelectedCard = /*#__PURE__*/new WeakMap();\nvar _secondSelectedCard = /*#__PURE__*/new WeakMap();\nvar _attemptNumber = /*#__PURE__*/new WeakMap();\nvar _failCount = /*#__PURE__*/new WeakMap();\nvar _cardsCount = /*#__PURE__*/new WeakMap();\nvar _cardsCountBtnsPanel = /*#__PURE__*/new WeakMap();\nvar _elapsedTimeElement = /*#__PURE__*/new WeakMap();\nvar _elapsedTime = /*#__PURE__*/new WeakMap();\nvar _startTimerBoolean = /*#__PURE__*/new WeakMap();\nvar _intervalIdForElapsedTime = /*#__PURE__*/new WeakMap();\nvar GameManager = /*#__PURE__*/function () {\n  function GameManager(board, score, fail) {\n    _classCallCheck(this, GameManager);\n    _classPrivateFieldInitSpec(this, _boardElement, {\n      writable: true,\n      value: void 0\n    });\n    _classPrivateFieldInitSpec(this, _scoreElement, {\n      writable: true,\n      value: void 0\n    });\n    _classPrivateFieldInitSpec(this, _failElement, {\n      writable: true,\n      value: void 0\n    });\n    _classPrivateFieldInitSpec(this, _desc, {\n      writable: true,\n      value: void 0\n    });\n    _classPrivateFieldInitSpec(this, _firstSelectedCard, {\n      writable: true,\n      value: null\n    });\n    _classPrivateFieldInitSpec(this, _secondSelectedCard, {\n      writable: true,\n      value: null\n    });\n    _classPrivateFieldInitSpec(this, _attemptNumber, {\n      writable: true,\n      value: 0\n    });\n    _classPrivateFieldInitSpec(this, _failCount, {\n      writable: true,\n      value: 0\n    });\n    _classPrivateFieldInitSpec(this, _cardsCount, {\n      writable: true,\n      value: 20\n    });\n    _classPrivateFieldInitSpec(this, _cardsCountBtnsPanel, {\n      writable: true,\n      value: document.getElementById('cardsCountPanel')\n    });\n    _classPrivateFieldInitSpec(this, _elapsedTimeElement, {\n      writable: true,\n      value: document.getElementById('elapsedTime')\n    });\n    _classPrivateFieldInitSpec(this, _elapsedTime, {\n      writable: true,\n      value: 0\n    });\n    _classPrivateFieldInitSpec(this, _startTimerBoolean, {\n      writable: true,\n      value: false\n    });\n    _classPrivateFieldInitSpec(this, _intervalIdForElapsedTime, {\n      writable: true,\n      value: void 0\n    });\n    _classPrivateFieldSet(this, _boardElement, board);\n    _classPrivateFieldSet(this, _scoreElement, score);\n    _classPrivateFieldSet(this, _failElement, fail);\n    this.findCardsCount();\n    this.activeCardsCountBtnsPanel();\n  }\n  _createClass(GameManager, [{\n    key: \"attemptNumber\",\n    get: function get() {\n      return _classPrivateFieldGet(this, _attemptNumber);\n    },\n    set: function set(value) {\n      _classPrivateFieldSet(this, _attemptNumber, value);\n      _classPrivateFieldGet(this, _scoreElement).innerHTML = value;\n    }\n  }, {\n    key: \"failCount\",\n    get: function get() {\n      return _classPrivateFieldGet(this, _failCount);\n    },\n    set: function set(value) {\n      _classPrivateFieldSet(this, _failCount, value);\n      _classPrivateFieldGet(this, _failElement).innerHTML = value;\n    }\n  }, {\n    key: \"cardsCount\",\n    set: function set(value) {\n      return _classPrivateFieldSet(this, _cardsCount, value);\n    }\n  }, {\n    key: \"shuffleAndDeal\",\n    value: function shuffleAndDeal() {\n      var _this = this;\n      _classPrivateFieldGet(this, _desc).shuffleCards();\n      _classPrivateFieldGet(this, _desc).cards.forEach(function (card) {\n        _classPrivateFieldGet(_this, _boardElement).append(card.getDomElement);\n      });\n    }\n  }, {\n    key: \"formatElapsedTime\",\n    value: function formatElapsedTime(time) {\n      return \"\".concat((time - time % 3600) / 3600 ? \"\".concat((time - time % 3600) / 3600, \":\") : '').concat((time - time % 60 - (time - time % 3600)) / 60 >= 10 ? (time - time % 60 - (time - time % 3600)) / 60 : \"0\".concat((time - time % 60 - (time - time % 3600)) / 60), \":\").concat(time % 60 >= 10 ? time % 60 : \"0\".concat(time % 60));\n    }\n  }, {\n    key: \"resetTimer\",\n    value: function resetTimer() {\n      clearInterval(_classPrivateFieldGet(this, _intervalIdForElapsedTime));\n      _classPrivateFieldSet(this, _startTimerBoolean, false);\n      _classPrivateFieldSet(this, _elapsedTime, 0);\n      _classPrivateFieldGet(this, _elapsedTimeElement).innerHTML = this.formatElapsedTime(_classPrivateFieldGet(this, _elapsedTime));\n    }\n  }, {\n    key: \"startGame\",\n    value: function startGame() {\n      this.resetTimer();\n      this.attemptNumber = 0;\n      this.failCount = 0;\n      _classPrivateFieldSet(this, _firstSelectedCard, null);\n      _classPrivateFieldSet(this, _secondSelectedCard, null);\n      _classPrivateFieldSet(this, _desc, new _Desk__WEBPACK_IMPORTED_MODULE_0__[\"default\"](_classPrivateFieldGet(this, _cardsCount)));\n      _classPrivateFieldGet(this, _boardElement).innerHTML = '';\n      this.shuffleAndDeal();\n    }\n  }, {\n    key: \"startElapsedTime\",\n    value: function startElapsedTime() {\n      var _this2 = this;\n      _classPrivateFieldSet(this, _intervalIdForElapsedTime, setInterval(function () {\n        var _this$elapsedTime, _this$elapsedTime2;\n        _classPrivateFieldSet(_this2, _elapsedTime, (_this$elapsedTime = _classPrivateFieldGet(_this2, _elapsedTime), _this$elapsedTime2 = _this$elapsedTime++, _this$elapsedTime)), _this$elapsedTime2;\n        _classPrivateFieldGet(_this2, _elapsedTimeElement).innerHTML = _this2.formatElapsedTime(_classPrivateFieldGet(_this2, _elapsedTime));\n      }, 1000));\n    }\n  }, {\n    key: \"selectCard\",\n    value: function selectCard(card) {\n      var _this3 = this;\n      if (!_classPrivateFieldGet(this, _startTimerBoolean)) {\n        this.startElapsedTime();\n        _classPrivateFieldSet(this, _startTimerBoolean, true);\n      }\n      if (card === _classPrivateFieldGet(this, _firstSelectedCard)) {\n        return;\n      }\n      card.flipCard();\n      if (_classPrivateFieldGet(this, _firstSelectedCard) && _classPrivateFieldGet(this, _secondSelectedCard)) {\n        _classPrivateFieldGet(this, _firstSelectedCard).flipCard();\n        _classPrivateFieldGet(this, _secondSelectedCard).flipCard();\n        _classPrivateFieldSet(this, _firstSelectedCard, null);\n        _classPrivateFieldSet(this, _secondSelectedCard, null);\n      }\n      if (_classPrivateFieldGet(this, _firstSelectedCard) === null) {\n        this.attemptNumber++;\n        _classPrivateFieldSet(this, _firstSelectedCard, card);\n      } else if (_classPrivateFieldGet(this, _secondSelectedCard) === null) {\n        _classPrivateFieldSet(this, _secondSelectedCard, card);\n        if (_classPrivateFieldGet(this, _firstSelectedCard).getFrontSideOfTheCard === card.getFrontSideOfTheCard) {\n          _classPrivateFieldGet(this, _desc).removeCard(_classPrivateFieldGet(this, _firstSelectedCard));\n          _classPrivateFieldGet(this, _desc).removeCard(_classPrivateFieldGet(this, _secondSelectedCard));\n          _classPrivateFieldSet(this, _firstSelectedCard, null);\n          _classPrivateFieldSet(this, _secondSelectedCard, null);\n        } else {\n          this.failCount++;\n        }\n      }\n      if (!_classPrivateFieldGet(this, _desc).cards.length) {\n        clearInterval(_classPrivateFieldGet(this, _intervalIdForElapsedTime));\n        var timerId = setTimeout(function () {\n          new _TheEndModal__WEBPACK_IMPORTED_MODULE_1__[\"default\"](_this3.attemptNumber, _this3.failCount, _this3.formatElapsedTime(_classPrivateFieldGet(_this3, _elapsedTime)));\n          clearTimeout(timerId);\n        }, 1000);\n      }\n    }\n  }, {\n    key: \"findCardsCount\",\n    value: function findCardsCount() {\n      if (_classPrivateFieldGet(this, _cardsCountBtnsPanel).children) {\n        for (var i = 0; i < _classPrivateFieldGet(this, _cardsCountBtnsPanel).children.length; i++) {\n          if (+_classPrivateFieldGet(this, _cardsCountBtnsPanel).children[i].textContent === +_classPrivateFieldGet(this, _cardsCount)) {\n            _classPrivateFieldGet(this, _cardsCountBtnsPanel).children[i].disabled = 'true';\n          } else {\n            _classPrivateFieldGet(this, _cardsCountBtnsPanel).children[i].removeAttribute('disabled');\n          }\n        }\n      }\n    }\n  }, {\n    key: \"selectCardsCount\",\n    value: function selectCardsCount(event) {\n      if (event.target.classList.contains('cardsCountBtn')) {\n        this.cardsCount = +event.target.textContent;\n      }\n      this.findCardsCount();\n    }\n  }, {\n    key: \"activeCardsCountBtnsPanel\",\n    value: function activeCardsCountBtnsPanel() {\n      var _this4 = this;\n      _classPrivateFieldGet(this, _cardsCountBtnsPanel).addEventListener('click', function (event) {\n        return _this4.selectCardsCount(event);\n      });\n    }\n  }]);\n  return GameManager;\n}();\n\n;\n\n//# sourceURL=webpack:///./js/GameManager.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ GameManager; }
+/* harmony export */ });
+/* harmony import */ var _Desk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Desk */ "./js/Desk.js");
+/* harmony import */ var _TheEndModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TheEndModal */ "./js/TheEndModal.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
+function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
+function _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get"); return _classApplyDescriptorGet(receiver, descriptor); }
+function _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }
+function _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }
+function _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError("attempted to " + action + " private field on non-instance"); } return privateMap.get(receiver); }
+function _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError("attempted to set read only private field"); } descriptor.value = value; } }
+
+
+var _boardElement = /*#__PURE__*/new WeakMap();
+var _scoreElement = /*#__PURE__*/new WeakMap();
+var _failElement = /*#__PURE__*/new WeakMap();
+var _desc = /*#__PURE__*/new WeakMap();
+var _firstSelectedCard = /*#__PURE__*/new WeakMap();
+var _secondSelectedCard = /*#__PURE__*/new WeakMap();
+var _attemptNumber = /*#__PURE__*/new WeakMap();
+var _failCount = /*#__PURE__*/new WeakMap();
+var _cardsCount = /*#__PURE__*/new WeakMap();
+var _cardsCountBtnsPanel = /*#__PURE__*/new WeakMap();
+var _elapsedTimeElement = /*#__PURE__*/new WeakMap();
+var _elapsedTime = /*#__PURE__*/new WeakMap();
+var _startTimerBoolean = /*#__PURE__*/new WeakMap();
+var _intervalIdForElapsedTime = /*#__PURE__*/new WeakMap();
+var GameManager = /*#__PURE__*/function () {
+  function GameManager(board, score, fail) {
+    _classCallCheck(this, GameManager);
+    _classPrivateFieldInitSpec(this, _boardElement, {
+      writable: true,
+      value: void 0
+    });
+    _classPrivateFieldInitSpec(this, _scoreElement, {
+      writable: true,
+      value: void 0
+    });
+    _classPrivateFieldInitSpec(this, _failElement, {
+      writable: true,
+      value: void 0
+    });
+    _classPrivateFieldInitSpec(this, _desc, {
+      writable: true,
+      value: void 0
+    });
+    _classPrivateFieldInitSpec(this, _firstSelectedCard, {
+      writable: true,
+      value: null
+    });
+    _classPrivateFieldInitSpec(this, _secondSelectedCard, {
+      writable: true,
+      value: null
+    });
+    _classPrivateFieldInitSpec(this, _attemptNumber, {
+      writable: true,
+      value: 0
+    });
+    _classPrivateFieldInitSpec(this, _failCount, {
+      writable: true,
+      value: 0
+    });
+    _classPrivateFieldInitSpec(this, _cardsCount, {
+      writable: true,
+      value: 20
+    });
+    _classPrivateFieldInitSpec(this, _cardsCountBtnsPanel, {
+      writable: true,
+      value: document.getElementById('cardsCountPanel')
+    });
+    _classPrivateFieldInitSpec(this, _elapsedTimeElement, {
+      writable: true,
+      value: document.getElementById('elapsedTime')
+    });
+    _classPrivateFieldInitSpec(this, _elapsedTime, {
+      writable: true,
+      value: 0
+    });
+    _classPrivateFieldInitSpec(this, _startTimerBoolean, {
+      writable: true,
+      value: false
+    });
+    _classPrivateFieldInitSpec(this, _intervalIdForElapsedTime, {
+      writable: true,
+      value: void 0
+    });
+    _classPrivateFieldSet(this, _boardElement, board);
+    _classPrivateFieldSet(this, _scoreElement, score);
+    _classPrivateFieldSet(this, _failElement, fail);
+    this.findCardsCount();
+    this.activeCardsCountBtnsPanel();
+  }
+  _createClass(GameManager, [{
+    key: "attemptNumber",
+    get: function get() {
+      return _classPrivateFieldGet(this, _attemptNumber);
+    },
+    set: function set(value) {
+      _classPrivateFieldSet(this, _attemptNumber, value);
+      _classPrivateFieldGet(this, _scoreElement).innerHTML = value;
+    }
+  }, {
+    key: "failCount",
+    get: function get() {
+      return _classPrivateFieldGet(this, _failCount);
+    },
+    set: function set(value) {
+      _classPrivateFieldSet(this, _failCount, value);
+      _classPrivateFieldGet(this, _failElement).innerHTML = value;
+    }
+  }, {
+    key: "cardsCount",
+    set: function set(value) {
+      return _classPrivateFieldSet(this, _cardsCount, value);
+    }
+  }, {
+    key: "shuffleAndDeal",
+    value: function shuffleAndDeal() {
+      var _this = this;
+      _classPrivateFieldGet(this, _desc).shuffleCards();
+      _classPrivateFieldGet(this, _desc).cards.forEach(function (card) {
+        _classPrivateFieldGet(_this, _boardElement).append(card.getDomElement);
+      });
+    }
+  }, {
+    key: "formatElapsedTime",
+    value: function formatElapsedTime(time) {
+      return "".concat((time - time % 3600) / 3600 ? "".concat((time - time % 3600) / 3600, ":") : '').concat((time - time % 60 - (time - time % 3600)) / 60 >= 10 ? (time - time % 60 - (time - time % 3600)) / 60 : "0".concat((time - time % 60 - (time - time % 3600)) / 60), ":").concat(time % 60 >= 10 ? time % 60 : "0".concat(time % 60));
+    }
+  }, {
+    key: "resetTimer",
+    value: function resetTimer() {
+      clearInterval(_classPrivateFieldGet(this, _intervalIdForElapsedTime));
+      _classPrivateFieldSet(this, _startTimerBoolean, false);
+      _classPrivateFieldSet(this, _elapsedTime, 0);
+      _classPrivateFieldGet(this, _elapsedTimeElement).innerHTML = this.formatElapsedTime(_classPrivateFieldGet(this, _elapsedTime));
+    }
+  }, {
+    key: "startGame",
+    value: function startGame() {
+      this.resetTimer();
+      this.attemptNumber = 0;
+      this.failCount = 0;
+      _classPrivateFieldSet(this, _firstSelectedCard, null);
+      _classPrivateFieldSet(this, _secondSelectedCard, null);
+      _classPrivateFieldSet(this, _desc, new _Desk__WEBPACK_IMPORTED_MODULE_0__["default"](_classPrivateFieldGet(this, _cardsCount)));
+      _classPrivateFieldGet(this, _boardElement).innerHTML = '';
+      this.shuffleAndDeal();
+    }
+  }, {
+    key: "startElapsedTime",
+    value: function startElapsedTime() {
+      var _this2 = this;
+      _classPrivateFieldSet(this, _intervalIdForElapsedTime, setInterval(function () {
+        var _this$elapsedTime, _this$elapsedTime2;
+        _classPrivateFieldSet(_this2, _elapsedTime, (_this$elapsedTime = _classPrivateFieldGet(_this2, _elapsedTime), _this$elapsedTime2 = _this$elapsedTime++, _this$elapsedTime)), _this$elapsedTime2;
+        _classPrivateFieldGet(_this2, _elapsedTimeElement).innerHTML = _this2.formatElapsedTime(_classPrivateFieldGet(_this2, _elapsedTime));
+      }, 1000));
+    }
+  }, {
+    key: "selectCard",
+    value: function selectCard(card) {
+      var _this3 = this;
+      if (!_classPrivateFieldGet(this, _startTimerBoolean)) {
+        this.startElapsedTime();
+        _classPrivateFieldSet(this, _startTimerBoolean, true);
+      }
+      if (card === _classPrivateFieldGet(this, _firstSelectedCard)) {
+        return;
+      }
+      card.flipCard();
+      if (_classPrivateFieldGet(this, _firstSelectedCard) && _classPrivateFieldGet(this, _secondSelectedCard)) {
+        _classPrivateFieldGet(this, _firstSelectedCard).flipCard();
+        _classPrivateFieldGet(this, _secondSelectedCard).flipCard();
+        _classPrivateFieldSet(this, _firstSelectedCard, null);
+        _classPrivateFieldSet(this, _secondSelectedCard, null);
+      }
+      if (_classPrivateFieldGet(this, _firstSelectedCard) === null) {
+        this.attemptNumber++;
+        _classPrivateFieldSet(this, _firstSelectedCard, card);
+      } else if (_classPrivateFieldGet(this, _secondSelectedCard) === null) {
+        _classPrivateFieldSet(this, _secondSelectedCard, card);
+        if (_classPrivateFieldGet(this, _firstSelectedCard).getFrontSideOfTheCard === card.getFrontSideOfTheCard) {
+          _classPrivateFieldGet(this, _desc).removeCard(_classPrivateFieldGet(this, _firstSelectedCard));
+          _classPrivateFieldGet(this, _desc).removeCard(_classPrivateFieldGet(this, _secondSelectedCard));
+          _classPrivateFieldSet(this, _firstSelectedCard, null);
+          _classPrivateFieldSet(this, _secondSelectedCard, null);
+        } else {
+          this.failCount++;
+        }
+      }
+      if (!_classPrivateFieldGet(this, _desc).cards.length) {
+        clearInterval(_classPrivateFieldGet(this, _intervalIdForElapsedTime));
+        var timerId = setTimeout(function () {
+          new _TheEndModal__WEBPACK_IMPORTED_MODULE_1__["default"](_this3.attemptNumber, _this3.failCount, _this3.formatElapsedTime(_classPrivateFieldGet(_this3, _elapsedTime)));
+          clearTimeout(timerId);
+        }, 1000);
+      }
+    }
+  }, {
+    key: "findCardsCount",
+    value: function findCardsCount() {
+      if (_classPrivateFieldGet(this, _cardsCountBtnsPanel).children) {
+        for (var i = 0; i < _classPrivateFieldGet(this, _cardsCountBtnsPanel).children.length; i++) {
+          if (+_classPrivateFieldGet(this, _cardsCountBtnsPanel).children[i].textContent === +_classPrivateFieldGet(this, _cardsCount)) {
+            _classPrivateFieldGet(this, _cardsCountBtnsPanel).children[i].disabled = 'true';
+          } else {
+            _classPrivateFieldGet(this, _cardsCountBtnsPanel).children[i].removeAttribute('disabled');
+          }
+        }
+      }
+    }
+  }, {
+    key: "selectCardsCount",
+    value: function selectCardsCount(event) {
+      if (event.target.classList.contains('cardsCountBtn')) {
+        this.cardsCount = +event.target.textContent;
+      }
+      this.findCardsCount();
+    }
+  }, {
+    key: "activeCardsCountBtnsPanel",
+    value: function activeCardsCountBtnsPanel() {
+      var _this4 = this;
+      _classPrivateFieldGet(this, _cardsCountBtnsPanel).addEventListener('click', function (event) {
+        return _this4.selectCardsCount(event);
+      });
+    }
+  }]);
+  return GameManager;
+}();
+
+;
 
 /***/ }),
 
@@ -46,17 +442,118 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ TheEndModal; }\n/* harmony export */ });\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; return _typeof = \"function\" == typeof Symbol && \"symbol\" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && \"function\" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }, _typeof(obj); }\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, \"prototype\", { writable: false }); return Constructor; }\nfunction _toPropertyKey(arg) { var key = _toPrimitive(arg, \"string\"); return _typeof(key) === \"symbol\" ? key : String(key); }\nfunction _toPrimitive(input, hint) { if (_typeof(input) !== \"object\" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || \"default\"); if (_typeof(res) !== \"object\") return res; throw new TypeError(\"@@toPrimitive must return a primitive value.\"); } return (hint === \"string\" ? String : Number)(input); }\nfunction _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }\nfunction _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError(\"Cannot initialize the same private elements twice on an object\"); } }\nfunction _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, \"get\"); return _classApplyDescriptorGet(receiver, descriptor); }\nfunction _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }\nfunction _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, \"set\"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }\nfunction _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError(\"attempted to \" + action + \" private field on non-instance\"); } return privateMap.get(receiver); }\nfunction _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError(\"attempted to set read only private field\"); } descriptor.value = value; } }\nvar _attemptNumber = /*#__PURE__*/new WeakMap();\nvar _failCount = /*#__PURE__*/new WeakMap();\nvar _elapsedTime = /*#__PURE__*/new WeakMap();\nvar _theEndElement = /*#__PURE__*/new WeakMap();\nvar _theEndModalElement = /*#__PURE__*/new WeakMap();\nvar _theEndModalAttemptNumberElement = /*#__PURE__*/new WeakMap();\nvar _theEndModalFailCountElement = /*#__PURE__*/new WeakMap();\nvar _theEndModalElapsedTimeElement = /*#__PURE__*/new WeakMap();\nvar _theEndModalCloseBtnElement = /*#__PURE__*/new WeakMap();\nvar TheEndModal = /*#__PURE__*/function () {\n  function TheEndModal(attemptNumber, failCount, elapsedTime) {\n    var _this = this;\n    _classCallCheck(this, TheEndModal);\n    _classPrivateFieldInitSpec(this, _attemptNumber, {\n      writable: true,\n      value: void 0\n    });\n    _classPrivateFieldInitSpec(this, _failCount, {\n      writable: true,\n      value: void 0\n    });\n    _classPrivateFieldInitSpec(this, _elapsedTime, {\n      writable: true,\n      value: void 0\n    });\n    _classPrivateFieldInitSpec(this, _theEndElement, {\n      writable: true,\n      value: document.getElementById('theEnd')\n    });\n    _classPrivateFieldInitSpec(this, _theEndModalElement, {\n      writable: true,\n      value: document.getElementById('theEndModal')\n    });\n    _classPrivateFieldInitSpec(this, _theEndModalAttemptNumberElement, {\n      writable: true,\n      value: document.getElementById('theEndModalAttemptNumber')\n    });\n    _classPrivateFieldInitSpec(this, _theEndModalFailCountElement, {\n      writable: true,\n      value: document.getElementById('theEndModalFailCount')\n    });\n    _classPrivateFieldInitSpec(this, _theEndModalElapsedTimeElement, {\n      writable: true,\n      value: document.getElementById('theEndModalElapsedTime')\n    });\n    _classPrivateFieldInitSpec(this, _theEndModalCloseBtnElement, {\n      writable: true,\n      value: document.getElementById('theEndModalCloseBtn')\n    });\n    _classPrivateFieldSet(this, _attemptNumber, attemptNumber);\n    _classPrivateFieldSet(this, _failCount, failCount);\n    _classPrivateFieldSet(this, _elapsedTime, elapsedTime);\n    this.openTheEndModal();\n    _classPrivateFieldGet(this, _theEndElement).onclick = function () {\n      return _this.closeTheEndModal(_this);\n    };\n    _classPrivateFieldGet(this, _theEndModalCloseBtnElement).onclick = function () {\n      return _this.closeTheEndModal(_this);\n    };\n    _classPrivateFieldGet(this, _theEndModalCloseBtnElement).onmouseover = function () {\n      return _this.changeBGColorForModalBtn(_this);\n    };\n  }\n  _createClass(TheEndModal, [{\n    key: \"changeBGColorForModalBtn\",\n    value: function changeBGColorForModalBtn() {\n      var red = (Math.random() * 255).toFixed(0);\n      var green = (Math.random() * 255).toFixed(0);\n      var blue = (Math.random() * 255).toFixed(0);\n      _classPrivateFieldGet(this, _theEndModalCloseBtnElement).style.backgroundColor = \"rgb(\".concat(red, \", \").concat(green, \", \").concat(blue, \")\");\n      _classPrivateFieldGet(this, _theEndModalCloseBtnElement).style.color = \"rgb(\".concat(255 - red, \", \").concat(255 - green, \", \").concat(255 - blue, \")\");\n    }\n  }, {\n    key: \"openTheEndModal\",\n    value: function openTheEndModal() {\n      _classPrivateFieldGet(this, _theEndElement).style.display = 'block';\n      _classPrivateFieldGet(this, _theEndModalElement).style.display = 'block';\n      _classPrivateFieldGet(this, _theEndModalAttemptNumberElement).innerHTML = \"\\u041A\\u043E\\u043B\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u043E \\u0445\\u043E\\u0434\\u043E\\u0432: \".concat(_classPrivateFieldGet(this, _attemptNumber));\n      _classPrivateFieldGet(this, _theEndModalFailCountElement).innerHTML = \"\\u041A\\u043E\\u043B\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u043E \\u043E\\u0448\\u0438\\u0431\\u043E\\u043A: \".concat(_classPrivateFieldGet(this, _failCount));\n      _classPrivateFieldGet(this, _theEndModalElapsedTimeElement).innerHTML = \"\\u0417\\u0430\\u0442\\u0440\\u0430\\u0447\\u0435\\u043D\\u043D\\u043E\\u0435 \\u0432\\u0440\\u0435\\u043C\\u044F: \".concat(_classPrivateFieldGet(this, _elapsedTime));\n    }\n  }, {\n    key: \"closeTheEndModal\",\n    value: function closeTheEndModal() {\n      _classPrivateFieldGet(this, _theEndElement).style.display = 'none';\n      _classPrivateFieldGet(this, _theEndModalElement).style.display = 'none';\n      _classPrivateFieldGet(this, _theEndModalAttemptNumberElement).innerHTML = '';\n      _classPrivateFieldGet(this, _theEndModalFailCountElement).innerHTML = '';\n      _classPrivateFieldGet(this, _theEndModalElapsedTimeElement).innerHTML = '';\n    }\n  }]);\n  return TheEndModal;\n}();\n\n;\n\n//# sourceURL=webpack:///./js/TheEndModal.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ TheEndModal; }
+/* harmony export */ });
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
+function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
+function _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get"); return _classApplyDescriptorGet(receiver, descriptor); }
+function _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }
+function _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }
+function _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError("attempted to " + action + " private field on non-instance"); } return privateMap.get(receiver); }
+function _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError("attempted to set read only private field"); } descriptor.value = value; } }
+var _attemptNumber = /*#__PURE__*/new WeakMap();
+var _failCount = /*#__PURE__*/new WeakMap();
+var _elapsedTime = /*#__PURE__*/new WeakMap();
+var _theEndElement = /*#__PURE__*/new WeakMap();
+var _theEndModalElement = /*#__PURE__*/new WeakMap();
+var _theEndModalAttemptNumberElement = /*#__PURE__*/new WeakMap();
+var _theEndModalFailCountElement = /*#__PURE__*/new WeakMap();
+var _theEndModalElapsedTimeElement = /*#__PURE__*/new WeakMap();
+var _theEndModalCloseBtnElement = /*#__PURE__*/new WeakMap();
+var TheEndModal = /*#__PURE__*/function () {
+  function TheEndModal(attemptNumber, failCount, elapsedTime) {
+    var _this = this;
+    _classCallCheck(this, TheEndModal);
+    _classPrivateFieldInitSpec(this, _attemptNumber, {
+      writable: true,
+      value: void 0
+    });
+    _classPrivateFieldInitSpec(this, _failCount, {
+      writable: true,
+      value: void 0
+    });
+    _classPrivateFieldInitSpec(this, _elapsedTime, {
+      writable: true,
+      value: void 0
+    });
+    _classPrivateFieldInitSpec(this, _theEndElement, {
+      writable: true,
+      value: document.getElementById('theEnd')
+    });
+    _classPrivateFieldInitSpec(this, _theEndModalElement, {
+      writable: true,
+      value: document.getElementById('theEndModal')
+    });
+    _classPrivateFieldInitSpec(this, _theEndModalAttemptNumberElement, {
+      writable: true,
+      value: document.getElementById('theEndModalAttemptNumber')
+    });
+    _classPrivateFieldInitSpec(this, _theEndModalFailCountElement, {
+      writable: true,
+      value: document.getElementById('theEndModalFailCount')
+    });
+    _classPrivateFieldInitSpec(this, _theEndModalElapsedTimeElement, {
+      writable: true,
+      value: document.getElementById('theEndModalElapsedTime')
+    });
+    _classPrivateFieldInitSpec(this, _theEndModalCloseBtnElement, {
+      writable: true,
+      value: document.getElementById('theEndModalCloseBtn')
+    });
+    _classPrivateFieldSet(this, _attemptNumber, attemptNumber);
+    _classPrivateFieldSet(this, _failCount, failCount);
+    _classPrivateFieldSet(this, _elapsedTime, elapsedTime);
+    this.openTheEndModal();
+    _classPrivateFieldGet(this, _theEndElement).onclick = function () {
+      return _this.closeTheEndModal(_this);
+    };
+    _classPrivateFieldGet(this, _theEndModalCloseBtnElement).onclick = function () {
+      return _this.closeTheEndModal(_this);
+    };
+    _classPrivateFieldGet(this, _theEndModalCloseBtnElement).onmouseover = function () {
+      return _this.changeBGColorForModalBtn(_this);
+    };
+  }
+  _createClass(TheEndModal, [{
+    key: "changeBGColorForModalBtn",
+    value: function changeBGColorForModalBtn() {
+      var red = (Math.random() * 255).toFixed(0);
+      var green = (Math.random() * 255).toFixed(0);
+      var blue = (Math.random() * 255).toFixed(0);
+      _classPrivateFieldGet(this, _theEndModalCloseBtnElement).style.backgroundColor = "rgb(".concat(red, ", ").concat(green, ", ").concat(blue, ")");
+      _classPrivateFieldGet(this, _theEndModalCloseBtnElement).style.color = "rgb(".concat(255 - red, ", ").concat(255 - green, ", ").concat(255 - blue, ")");
+    }
+  }, {
+    key: "openTheEndModal",
+    value: function openTheEndModal() {
+      _classPrivateFieldGet(this, _theEndElement).style.display = 'block';
+      _classPrivateFieldGet(this, _theEndModalElement).style.display = 'block';
+      _classPrivateFieldGet(this, _theEndModalAttemptNumberElement).innerHTML = "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0445\u043E\u0434\u043E\u0432: ".concat(_classPrivateFieldGet(this, _attemptNumber));
+      _classPrivateFieldGet(this, _theEndModalFailCountElement).innerHTML = "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u043E\u0448\u0438\u0431\u043E\u043A: ".concat(_classPrivateFieldGet(this, _failCount));
+      _classPrivateFieldGet(this, _theEndModalElapsedTimeElement).innerHTML = "\u0417\u0430\u0442\u0440\u0430\u0447\u0435\u043D\u043D\u043E\u0435 \u0432\u0440\u0435\u043C\u044F: ".concat(_classPrivateFieldGet(this, _elapsedTime));
+    }
+  }, {
+    key: "closeTheEndModal",
+    value: function closeTheEndModal() {
+      _classPrivateFieldGet(this, _theEndElement).style.display = 'none';
+      _classPrivateFieldGet(this, _theEndModalElement).style.display = 'none';
+      _classPrivateFieldGet(this, _theEndModalAttemptNumberElement).innerHTML = '';
+      _classPrivateFieldGet(this, _theEndModalFailCountElement).innerHTML = '';
+      _classPrivateFieldGet(this, _theEndModalElapsedTimeElement).innerHTML = '';
+    }
+  }]);
+  return TheEndModal;
+}();
 
-/***/ }),
-
-/***/ "./js/main.js":
-/*!********************!*\
-  !*** ./js/main.js ***!
-  \********************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _GameManager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GameManager */ \"./js/GameManager.js\");\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/style.scss */ \"./styles/style.scss\");\n\n\nvar board = document.getElementById('board');\nvar score = document.getElementById('attemptNumber');\nvar fail = document.getElementById('failCount');\nvar startGameButton = document.getElementById('startGame');\nvar rememberFieldButton = document.getElementById('rememberField');\nvar gameManager = new _GameManager__WEBPACK_IMPORTED_MODULE_0__[\"default\"](board, score, fail);\ngameManager.startGame();\nvar intervalIdForCountdown;\nvar clickCard = function clickCard(event) {\n  var clickedCard = event.target.connectedCard;\n  if (clickedCard) {\n    gameManager.selectCard(clickedCard);\n    if (!rememberFieldButton.hasAttribute('disabled')) {\n      setButtonForFlipAllCardsIsDisabled();\n      rememberFieldButton.removeEventListener('click', openCards);\n    }\n  }\n};\nboard.addEventListener('click', clickCard);\nstartGameButton.addEventListener('click', function () {\n  clearInterval(intervalIdForCountdown);\n  gameManager.startGame();\n  board.addEventListener('click', clickCard);\n  setButtonForFlipAllCardsIsAbled();\n});\nvar setButtonForFlipAllCardsIsDisabled = function setButtonForFlipAllCardsIsDisabled() {\n  rememberFieldButton.innerHTML = 'Недоступно';\n  rememberFieldButton.style.cursor = 'default';\n  rememberFieldButton.disabled = 'true';\n};\nvar setButtonForFlipAllCardsIsAbled = function setButtonForFlipAllCardsIsAbled() {\n  rememberFieldButton.innerHTML = 'Запомнить';\n  rememberFieldButton.style.cursor = 'pointer';\n  rememberFieldButton.removeAttribute('disabled');\n  rememberFieldButton.removeEventListener('click', closeCards);\n  rememberFieldButton.addEventListener('click', openCards);\n};\nvar flipAllCards = function flipAllCards() {\n  for (var i = 0; i < board.childNodes.length; i++) {\n    if (board.childNodes[i].connectedCard) {\n      board.childNodes[i].connectedCard.flipCard();\n    }\n  }\n};\nvar closeCards = function closeCards() {\n  clearInterval(intervalIdForCountdown);\n  flipAllCards();\n  rememberFieldButton.removeEventListener('click', closeCards);\n  setButtonForFlipAllCardsIsDisabled();\n  board.addEventListener('click', clickCard);\n};\nvar openCards = function openCards() {\n  board.removeEventListener('click', clickCard);\n  flipAllCards();\n  rememberFieldButton.removeEventListener('click', openCards);\n  rememberFieldButton.addEventListener('click', closeCards);\n  var count = 10;\n  rememberFieldButton.innerHTML = \"\\u0421\\u043A\\u0440\\u044B\\u0442\\u044C \".concat(count.toFixed(2));\n  var interval = 0.01;\n  intervalIdForCountdown = setInterval(function () {\n    count = count - interval;\n    rememberFieldButton.innerHTML = \"\\u0421\\u043A\\u0440\\u044B\\u0442\\u044C \".concat(count.toFixed(2));\n    if (count <= 0) {\n      closeCards();\n    }\n  }, interval * 1000);\n};\nrememberFieldButton.addEventListener('click', openCards);\n\n//# sourceURL=webpack:///./js/main.js?");
+;
 
 /***/ }),
 
@@ -66,7 +563,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Gam
   \***************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./styles/style.scss?");
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ })
 
@@ -126,11 +625,86 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	}();
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./js/main.js");
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+!function() {
+/*!********************!*\
+  !*** ./js/main.js ***!
+  \********************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GameManager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GameManager */ "./js/GameManager.js");
+/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/style.scss */ "./styles/style.scss");
+
+
+var board = document.getElementById('board');
+var score = document.getElementById('attemptNumber');
+var fail = document.getElementById('failCount');
+var startGameButton = document.getElementById('startGame');
+var rememberFieldButton = document.getElementById('rememberField');
+var gameManager = new _GameManager__WEBPACK_IMPORTED_MODULE_0__["default"](board, score, fail);
+gameManager.startGame();
+var intervalIdForCountdown;
+var clickCard = function clickCard(event) {
+  var clickedCard = event.target.connectedCard;
+  if (clickedCard) {
+    gameManager.selectCard(clickedCard);
+    if (!rememberFieldButton.hasAttribute('disabled')) {
+      setButtonForFlipAllCardsIsDisabled();
+      rememberFieldButton.removeEventListener('click', openCards);
+    }
+  }
+};
+board.addEventListener('click', clickCard);
+startGameButton.addEventListener('click', function () {
+  clearInterval(intervalIdForCountdown);
+  gameManager.startGame();
+  board.addEventListener('click', clickCard);
+  setButtonForFlipAllCardsIsAbled();
+});
+var setButtonForFlipAllCardsIsDisabled = function setButtonForFlipAllCardsIsDisabled() {
+  rememberFieldButton.innerHTML = 'Недоступно';
+  rememberFieldButton.style.cursor = 'default';
+  rememberFieldButton.disabled = 'true';
+};
+var setButtonForFlipAllCardsIsAbled = function setButtonForFlipAllCardsIsAbled() {
+  rememberFieldButton.innerHTML = 'Запомнить';
+  rememberFieldButton.style.cursor = 'pointer';
+  rememberFieldButton.removeAttribute('disabled');
+  rememberFieldButton.removeEventListener('click', closeCards);
+  rememberFieldButton.addEventListener('click', openCards);
+};
+var flipAllCards = function flipAllCards() {
+  for (var i = 0; i < board.childNodes.length; i++) {
+    if (board.childNodes[i].connectedCard) {
+      board.childNodes[i].connectedCard.flipCard();
+    }
+  }
+};
+var closeCards = function closeCards() {
+  clearInterval(intervalIdForCountdown);
+  flipAllCards();
+  rememberFieldButton.removeEventListener('click', closeCards);
+  setButtonForFlipAllCardsIsDisabled();
+  board.addEventListener('click', clickCard);
+};
+var openCards = function openCards() {
+  board.removeEventListener('click', clickCard);
+  flipAllCards();
+  rememberFieldButton.removeEventListener('click', openCards);
+  rememberFieldButton.addEventListener('click', closeCards);
+  var count = 10;
+  rememberFieldButton.innerHTML = "\u0421\u043A\u0440\u044B\u0442\u044C ".concat(count.toFixed(2));
+  var interval = 0.01;
+  intervalIdForCountdown = setInterval(function () {
+    count = count - interval;
+    rememberFieldButton.innerHTML = "\u0421\u043A\u0440\u044B\u0442\u044C ".concat(count.toFixed(2));
+    if (count <= 0) {
+      closeCards();
+    }
+  }, interval * 1000);
+};
+rememberFieldButton.addEventListener('click', openCards);
+}();
 /******/ })()
 ;
+//# sourceMappingURL=main.js.map
