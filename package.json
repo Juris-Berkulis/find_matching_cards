@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "babel": "babel js -d babelOut",
-    "babel_watch": "babel js -d babelOut -w"
+    "babel": "babel src/js -d babelOut",
+    "babel_watch": "babel src/js -d babelOut -w"
   },
   "repository": {
     "type": "git",
