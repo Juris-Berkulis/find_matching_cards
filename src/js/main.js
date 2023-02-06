@@ -1,5 +1,5 @@
 import GameManager from './GameManager';
-import '../styles/style.css'
+import '../styles/style.scss'
 
 const board = document.getElementById('board');
 const score = document.getElementById('attemptNumber');
