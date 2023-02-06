@@ -1,4 +1,4 @@
-class TheEndModal {
+export default class TheEndModal {
     #attemptNumber;
     #failCount;
     #elapsedTime;

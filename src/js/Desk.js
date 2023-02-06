@@ -1,4 +1,6 @@
-class Desc {
+import Card from './Card';
+
+export default class Desc {
     #cardsCount;
     #frontSidesOfTheCards = [
         'red', 

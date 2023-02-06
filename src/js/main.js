@@ -1,3 +1,6 @@
+import GameManager from './GameManager';
+import '../styles/style.css'
+
 const board = document.getElementById('board');
 const score = document.getElementById('attemptNumber');
 const fail = document.getElementById('failCount');

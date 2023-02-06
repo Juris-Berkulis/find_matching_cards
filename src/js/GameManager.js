@@ -1,4 +1,7 @@
-class GameManager {
+import Desc from './Desk';
+import TheEndModal from './TheEndModal';
+
+export default class GameManager {
     #boardElement;
     #scoreElement;
     #failElement;

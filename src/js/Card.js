@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
     #bgColor;
     #domElement;
     #isShowCard = false;
