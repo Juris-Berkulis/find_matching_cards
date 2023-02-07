@@ -2,11 +2,11 @@
 last 20 versions
 Firefox ESR
 not dead
-Firefox >= 60
-Chrome >= 60
-Safari >= 8
-Opera >= 55
+Firefox >= 49
+Chrome >= 49
+Safari >= 5
+Opera >= 41
 Edge >= 12
-ChromeAndroid >= 109
-iOS >= 8
-IE >= 9
+ChromeAndroid >= 54
+iOS >= 5
+IE >= 7
