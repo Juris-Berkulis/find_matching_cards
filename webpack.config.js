@@ -38,6 +38,7 @@ const cssLoaders = (cssLoader) => {
             options: {},
         }, 
         'css-loader',
+        "postcss-loader"
     ];
 
     if (cssLoader) {

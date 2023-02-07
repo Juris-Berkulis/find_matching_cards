@@ -7,7 +7,7 @@
 html, 
 body {
     height: 100vh;
-    height: fill-available;
+    max-height: stretch;
 }
 
 @keyframes animation__bg__waves {
@@ -49,7 +49,7 @@ button {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    height: fill-available;
+    max-height: stretch;
     width: 100vw;
     background-color: #cccccc;
     animation: animation__bg__waves 5s linear 0.01s infinite normal both;;
@@ -106,7 +106,7 @@ button {
     top: 0;
     left: 0;
     height: 100vh;
-    height: fill-available;
+    max-height: stretch;
     width: 100vw;
     background-color: #55555555;
     cursor: pointer;
