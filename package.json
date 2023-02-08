@@ -6,10 +6,11 @@
   "scripts": {
     "deploy": "npm run build_prod && surge --project ./dist --domain https://findmards.surge.sh && surge list",
     "build": "npm run build_prod",
-    "build_prod": "cross-env NODE_ENV=production webpack --mode production",
-    "build_dev": "cross-env NODE_ENV=development webpack --mode development",
-    "build_dev_watch": "cross-env NODE_ENV=development webpack --mode development --watch",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
+    "build_prod": "cross-env NODE_ENV=production webpack --mode production && npm run copy_public_dir",
+    "build_dev": "cross-env NODE_ENV=development webpack --mode development && npm run copy_public_dir",
+    "build_dev_watch": "cross-env NODE_ENV=development webpack --mode development --watch && npm run copy_public_dir",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open && npm run copy_public_dir",
+    "copy_public_dir": "copy public dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
