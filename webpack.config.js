@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const CopyPlugin = require("copy-webpack-plugin")
 
 //* Если переменная среды ровна 'development', то мы находимся в режиме разработки, а иначе - в режиме продакшн:
 const isDev = process.env.NODE_ENV === 'development';
@@ -167,6 +168,14 @@ module.exports = {
             filename: getFilename('css')
         }),
         new FaviconsWebpackPlugin(faviconsConfig),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: '../public', 
+                    to: '../dist'
+                },
+            ],
+        }),
     ],
     module: {
         rules: [
