@@ -32,9 +32,17 @@ button {
     color: #333333;
     background-color: #efefef;
     cursor: pointer;
+    &:focus {
+        color: #333333;
+        background-color: #efefef;
+    }
     &:hover {
         color: #efefef;
         background-color: #aaaaaa;
+    }
+    &:active {
+        color: #fafafa;
+        background-color: #999999;
     }
     &:disabled {
         border: 1px solid #999999;
@@ -110,6 +118,15 @@ button {
     width: 100vw;
     background-color: #55555555;
     cursor: pointer;
+    &:focus {
+        background-color: #55555555;
+    }
+    &:hover {
+        background-color: #33333377;
+    }
+    &:active {
+        background-color: #22222299;
+    }
 }
 
 .theEndModal {
