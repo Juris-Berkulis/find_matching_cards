@@ -50,7 +50,11 @@ export default class GameManager {
     shuffleAndDeal () {
         this.#desc.shuffleCards();
         this.#desc.cards.forEach((card) => {
-            this.#boardElement.append(card.getDomElement);
+            if (this.#boardElement.append) {
+                this.#boardElement.append(card.getDomElement);
+            } else {
+                this.#boardElement.appendChild(card.getDomElement);
+            }
         });
     };
 
