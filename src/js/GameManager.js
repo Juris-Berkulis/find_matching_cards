@@ -1,3 +1,4 @@
+import * as styles from '../styles/style.scss';
 import Desc from './Desk';
 import TheEndModal from './TheEndModal';
 
@@ -149,7 +150,7 @@ export default class GameManager {
     };
     
     selectCardsCount (event) {
-        if (event.target.classList.contains('cardsCountBtn')) {
+        if (event.target.classList.contains(`${styles.cardsCountBtn}`)) {
             this.cardsCount = +event.target.textContent;
         }
     

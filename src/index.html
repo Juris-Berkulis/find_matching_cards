@@ -10,42 +10,6 @@
     <title>Findmards</title>
 </head>
 <body>
-    <div class="main">
-        <div class="controlPanel" id="controlPanel">
-            <div id="cardsCountPanel" class="cardsCountPanel">
-                <button class="cardsCountBtn">10</button>
-                <button class="cardsCountBtn">20</button>
-                <button class="cardsCountBtn">30</button>
-                <button class="cardsCountBtn">40</button>
-            </div>
-            <button class="startGameBtn" id="startGame">Новая игра</button>
-            <button class="startGameBtn" id="rememberField">Запомнить</button>
-            <p>
-                <span>Попытка: </span>
-                <span id="attemptNumber"></span>
-            </p>
-            <p>
-                <span>Ошибки: </span>
-                <span id="failCount"></span>
-            </p>
-            <p id="elapsedTime"></p>
-        </div>
-        <div class="board" id="board"></div>
-        <div class="theEnd" id="theEnd">
-            <div class="theEndCross">
-                <div class="theEndCrossLine theEndCrossLine-1"></div>
-                <div class="theEndCrossLine theEndCrossLine-2"></div>
-            </div>
-        </div>
-        <div class="theEndModal" id="theEndModal">
-            <p class="theEndModalParagraph">Вы победили!</p>
-            <p class="theEndModalParagraph" id="theEndModalAttemptNumber"></p>
-            <p class="theEndModalParagraph" id="theEndModalFailCount"></p>
-            <p class="theEndModalParagraph" id="theEndModalElapsedTime"></p>
-            <div class="theEndModalCloseBtnWrapper">
-                <button class="theEndModalCloseBtn" id="theEndModalCloseBtn">Ok</button>
-            </div>
-        </div>
-    </div>
+    <div id="app"></div>
 </body>
 </html>

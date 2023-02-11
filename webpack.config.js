@@ -10,7 +10,7 @@ const CopyPlugin = require("copy-webpack-plugin")
 //* Если переменная среды ровна 'development', то мы находимся в режиме разработки, а иначе - в режиме продакшн:
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
-console.log(`========== РЕЖИМ: ${process.env.NODE_ENV && typeof(process.env.NODE_ENV) === 'string' ? process.env.NODE_ENV.toUpperCase() : 'НЕИЗВЕСТНО'} ==========`);
+console.log(`========== РЕЖИМ: ${process.env.NODE_ENV && typeof(process.env.NODE_ENV) === 'string' ? process.env.NODE_ENV.toUpperCase() : process.env.NODE_ENV} ==========`);
 
 const optimization = () => {
     const config = {
@@ -29,6 +29,26 @@ const optimization = () => {
     return config
 };
 
+function* generateNumber() {
+    let i = 1;
+
+    while (true) {
+        yield i++;
+    }
+}
+
+const generator = generateNumber();
+
+const classesNames = {};
+
+const getHeshForClassName = (localName) => {
+    if (!classesNames[localName]) {
+        classesNames[localName] = `${isDev ? `${localName}__` : ''}jss${generator.next().value}`;
+    }
+    
+    return classesNames[localName]
+}
+
 const getFilename = (fileExtension) => {
     return isDev ? `[name].${fileExtension}` : `[name].[hash].${fileExtension}`
 };
@@ -39,7 +59,17 @@ const cssLoaders = (cssLoader) => {
             loader: MiniCssExtractPlugin.loader,
             options: {},
         }, 
-        'css-loader',
+        {
+            loader: "css-loader",
+            options: {
+                modules: { //* - Подробнее на сайте: "https://www.npmjs.com/package/css-loader/v/6.7.1".
+                    //? localIdentName: "[path][name]__[local]--[hash:base64:5]",
+                    namedExport: true,
+                    exportLocalsConvention: "camelCaseOnly",
+                    getLocalIdent: (context ,  localIdentName ,  localName ,  options) => `${getHeshForClassName(localName)}`
+                },
+            },
+        },
         "postcss-loader"
     ];
 
