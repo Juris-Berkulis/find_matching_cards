@@ -219,7 +219,10 @@ module.exports = {
             },
             {
                 test: /\.(png|jpeg|jpg|svg|gif)$/i,
-                use: ['file-loader']
+                loader: 'file-loader',
+                options: {
+                    name: isDev ? '[path][name].[ext]' : '[path][contenthash].[ext]',
+                },
             },
             {
                 test: /\.m?js$/i,
