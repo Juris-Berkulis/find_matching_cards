@@ -15,11 +15,11 @@ body {
         #{$i * 1%} {
             background: linear-gradient(
                 to right,
-                #cccccc -100% #{($i - 65) * 1%},
+                #cccccc #{($i - 135) * 1%} #{($i - 65) * 1%},
                 #eeeeee #{($i - 55) * 1%} #{($i - 45) * 1%},
                 #cccccc #{($i - 35) * 1%} #{($i + 35) * 1%},
                 #eeeeee #{($i + 45) * 1%} #{($i + 55) * 1%},
-                #cccccc #{($i + 65) * 1%} 200%
+                #cccccc #{($i + 65) * 1%} #{($i + 135) * 1%}
             );
         }
     }
