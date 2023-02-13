@@ -6,6 +6,7 @@ const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugi
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const CopyPlugin = require("copy-webpack-plugin")
+const WorkboxPlugin = require('workbox-webpack-plugin')
 
 //* Если переменная среды ровна 'development', то мы находимся в режиме разработки, а иначе - в режиме продакшн:
 const isDev = process.env.NODE_ENV === 'development';
@@ -205,6 +206,13 @@ module.exports = {
                     to: '../dist'
                 },
             ],
+        }),
+        new WorkboxPlugin.GenerateSW({
+            // these options encourage the ServiceWorkers to get in there fast
+            // and not allow any straggling "old" SWs to hang around
+            clientsClaim: true,
+            skipWaiting: true,
+            exclude: [/robots.txt/],
         }),
     ],
     module: {
