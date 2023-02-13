@@ -213,6 +213,7 @@ module.exports = {
             clientsClaim: true,
             skipWaiting: true,
             exclude: [/robots.txt/],
+            sourcemap: false,
         }),
     ],
     module: {

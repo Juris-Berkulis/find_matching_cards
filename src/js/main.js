@@ -1,5 +1,6 @@
 import InitialHtml from './InitialHtml';
 import GameManager from './GameManager';
+import * as serviceWorkerRegistration from '../ServiceWorker/serviceWorkerRegistration';
 
 new InitialHtml();
 
@@ -99,12 +100,4 @@ const openCards = () => {
 rememberFieldButton.addEventListener('click', openCards);
 
 //* Register a service-worker:
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js').then(registration => {
-            console.log('SW registered: ', registration);
-        }).catch(registrationError => {
-            console.log('SW registration failed: ', registrationError);
-        });
-    });
-};
+serviceWorkerRegistration.register();

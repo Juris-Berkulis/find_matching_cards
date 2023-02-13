@@ -1,3 +1,4 @@
 node_modules
 info
 favicon/favicon_original.jpg
+.env
