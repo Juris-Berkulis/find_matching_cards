@@ -1,6 +1,7 @@
 import InitialHtml from './InitialHtml';
 import GameManager from './GameManager';
 import * as serviceWorkerRegistration from '../ServiceWorker/serviceWorkerRegistration';
+import {pwaStatus} from '../ServiceWorker/pwaInstall';
 
 new InitialHtml();
 
@@ -101,3 +102,5 @@ rememberFieldButton.addEventListener('click', openCards);
 
 //* Register a service-worker:
 serviceWorkerRegistration.register();
+
+pwaStatus();

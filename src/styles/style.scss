@@ -220,3 +220,17 @@ button {
     margin-top: 5%;
     font-weight: 600;
 }
+
+.theEndModalInstallAppBtn {
+    display: none;
+}
+
+@media all and (display-mode: standalone) {
+    .theEndModalInstallAppBtn {
+        display: none;
+    }
+}
+
+.btnShow {
+    display: inline;
+}

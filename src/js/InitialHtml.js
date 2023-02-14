@@ -35,6 +35,7 @@ export default class InitialHtml {
             <p class="${styles.theEndModalParagraph}" id="theEndModalFailCount"></p>
             <p class="${styles.theEndModalParagraph}" id="theEndModalElapsedTime"></p>
             <div class="${styles.theEndModalCloseBtnWrapper}">
+                <button class="${styles.theEndModalInstallAppBtn} ${styles.theEndModalCloseBtn}" id="theEndModalInstallAppBtn">Inst</button>
                 <button class="${styles.theEndModalCloseBtn}" id="theEndModalCloseBtn">Ok</button>
             </div>
         </div>
