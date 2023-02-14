@@ -228,9 +228,9 @@ button {
 
 @media screen and (orientation: portrait) {
     .theEndModalBtn {
-        height: 10vw;
-        min-width: 10vw;
-        border-radius: 2vw;
+        height: 20vw;
+        min-width: 20vw;
+        border-radius: 4vw;
     }
 }
 
@@ -258,8 +258,8 @@ button {
 
 @media screen and (orientation: portrait) {
     .theEndModalSign {
-        font-size: 3vw;
-        line-height: 3vw;
+        font-size: 6vw;
+        line-height: 6vw;
     }
 }
 
@@ -270,7 +270,7 @@ button {
 
 @media screen and (orientation: portrait) {
     .theEndModalInstallSign {
-        font-size: 8vw;
-        line-height: 8vw;
+        font-size: 16vw;
+        line-height: 16vw;
     }
 }
