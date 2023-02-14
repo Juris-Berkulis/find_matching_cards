@@ -8,6 +8,7 @@ export default class TheEndModal {
     #theEndModalFailCountElement = document.getElementById('theEndModalFailCount');
     #theEndModalElapsedTimeElement = document.getElementById('theEndModalElapsedTime');
     #theEndModalCloseBtnElement = document.getElementById('theEndModalCloseBtn');
+    #theEndModalInstallAppBtnElement = document.getElementById('theEndModalInstallAppBtn');
 
     constructor (attemptNumber, failCount, elapsedTime) {
         this.#attemptNumber = attemptNumber;
@@ -16,16 +17,17 @@ export default class TheEndModal {
         this.openTheEndModal();
         this.#theEndElement.onclick = () => this.closeTheEndModal(this);
         this.#theEndModalCloseBtnElement.onclick = () => this.closeTheEndModal(this);
-        this.#theEndModalCloseBtnElement.onmouseover = () => this.changeBGColorForModalBtn(this);
+        this.#theEndModalCloseBtnElement.onmouseover = () => this.changeBGColorForModalBtn(this.#theEndModalCloseBtnElement);
+        this.#theEndModalInstallAppBtnElement.onmouseover = () => this.changeBGColorForModalBtn(this.#theEndModalInstallAppBtnElement);
     }
 
-    changeBGColorForModalBtn () {
+    changeBGColorForModalBtn (element) {
         const red = (Math.random() * 255).toFixed(0);
         const green = (Math.random() * 255).toFixed(0);
         const blue = (Math.random() * 255).toFixed(0);
 
-        this.#theEndModalCloseBtnElement.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-        this.#theEndModalCloseBtnElement.style.color = `rgb(${255 - red}, ${255 - green}, ${255 - blue})`;
+        element.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        element.style.color = `rgb(${255 - red}, ${255 - green}, ${255 - blue})`;
     }
 
     openTheEndModal () {

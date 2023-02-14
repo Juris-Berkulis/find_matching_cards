@@ -4,13 +4,16 @@ export const pwaStatus = () => { //* Подробнее на сайте: "https:
     // Initialize deferredPrompt for use later to show browser install prompt.
     let deferredPrompt;
     const theEndModalInstallAppBtnElement = document.getElementById('theEndModalInstallAppBtn');
+    const theEndModalBtnWrapperElement = document.getElementById('theEndModalBtnWrapper');
 
     const showInstallPromotion = () => {
         theEndModalInstallAppBtnElement.classList.add(`${styles.btnShow}`);
+        theEndModalBtnWrapperElement.style.justifyContent = 'space-between';
     };
 
     const hideInstallPromotion = () => {
         theEndModalInstallAppBtnElement.classList.remove(`${styles.btnShow}`);
+        theEndModalBtnWrapperElement.style.justifyContent = 'flex-end';
     };
 
     const onClickForBtn = async () => {
