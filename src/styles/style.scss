@@ -216,9 +216,22 @@ button {
 }
 
 .theEndModalBtn {
-    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    min-width: 10vh;
+    border-radius: 2vh;
     margin-top: 5%;
     font-weight: 600;
+}
+
+@media screen and (orientation: portrait) {
+    .theEndModalBtn {
+        height: 10vw;
+        min-width: 10vw;
+        border-radius: 2vw;
+    }
 }
 
 .theEndModalInstallAppBtn {
@@ -232,5 +245,32 @@ button {
 }
 
 .btnShow {
-    display: inline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.theEndModalSign {
+    display: block;
+    font-size: 3vh;
+    line-height: 3vh;
+}
+
+@media screen and (orientation: portrait) {
+    .theEndModalSign {
+        font-size: 3vw;
+        line-height: 3vw;
+    }
+}
+
+.theEndModalInstallSign {
+    font-size: 8vh;
+    line-height: 8vh;
+}
+
+@media screen and (orientation: portrait) {
+    .theEndModalInstallSign {
+        font-size: 8vw;
+        line-height: 8vw;
+    }
 }
