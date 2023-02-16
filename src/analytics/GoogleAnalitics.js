@@ -15,55 +15,37 @@ export default class GoogleAnalytics {
         {
             element: document.getElementById('startGame'),
             listener: () => {
-                gtag('event', 'newGame', {
-                    'element': 'btn',
-                    'description': 'newGame',
-                });
+                this.listenerFunc('newGame', 'btn', 'newGame');
             },
         },
         {
             element: document.getElementById('rememberField'),
             listener: () => {
-                gtag('event', 'rememberCards', {
-                    'element': 'btn',
-                    'description': 'remember',
-                });
+                this.listenerFunc('rememberCards', 'btn', 'rememberCards');
             },
         },
         {
             element: document.getElementById('cardsCountPanel'),
             listener: () => {
-                gtag('event', 'levelsPanel', {
-                    'element': 'btnsPanel',
-                    'description': 'levelsPanel',
-                });
+                this.listenerFunc('levelsPanel', 'btnsPanel', 'levelsPanel');
             },
         },
         {
             element: document.getElementById('theEndModalInstallAppBtn'),
             listener: () => {
-                gtag('event', 'installApp', {
-                    'element': 'btn',
-                    'description': 'installApp',
-                });
+                this.listenerFunc('installApp', 'btn', 'installApp');
             },
         },
         {
             element: document.getElementById('theEndModalCloseBtn'),
             listener: () => {
-                gtag('event', 'theEndModalCloseBtn', {
-                    'element': 'btn',
-                    'description': 'theEndModalCloseBtn',
-                });
+                this.listenerFunc('theEndModalCloseBtn', 'btn', 'theEndModalCloseBtn');
             },
         },
         {
             element: document.getElementById('theEnd'),
             listener: () => {
-                gtag('event', 'theEndModalCloseField', {
-                    'element': 'field',
-                    'description': 'theEndModalCloseField',
-                });
+                this.listenerFunc('theEndModalCloseField', 'field', 'theEndModalCloseField');
             },
         },
     ];
@@ -103,6 +85,17 @@ export default class GoogleAnalytics {
         `;
 
         return script
+    }
+
+    listenerFunc (eventName, element, description) {
+        gtag(
+            'event', 
+            eventName, 
+            {
+                'element': element,
+                'description': description,
+            }
+        );
     }
 
     addAnalyticsListener () {
