@@ -4,8 +4,8 @@ import * as serviceWorkerRegistration from '../ServiceWorker/serviceWorkerRegist
 import {pwaStatus} from '../ServiceWorker/pwaInstall';
 import GoogleAnalytics from '../analytics/GoogleAnalitics';
 
-new GoogleAnalytics();
 new InitialHtml();
+new GoogleAnalytics();
 
 const board = document.getElementById('board');
 const score = document.getElementById('attemptNumber');

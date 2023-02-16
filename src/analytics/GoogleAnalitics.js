@@ -11,6 +11,63 @@ export default class GoogleAnalytics {
         },
     }
 
+    #analiticListeners = [
+        {
+            element: document.getElementById('startGame'),
+            listener: () => {
+                gtag('event', 'newGame', {
+                    'element': 'btn',
+                    'description': 'newGame',
+                });
+            },
+        },
+        {
+            element: document.getElementById('rememberField'),
+            listener: () => {
+                gtag('event', 'rememberCards', {
+                    'element': 'btn',
+                    'description': 'remember',
+                });
+            },
+        },
+        {
+            element: document.getElementById('cardsCountPanel'),
+            listener: () => {
+                gtag('event', 'levelsPanel', {
+                    'element': 'btnsPanel',
+                    'description': 'levelsPanel',
+                });
+            },
+        },
+        {
+            element: document.getElementById('theEndModalInstallAppBtn'),
+            listener: () => {
+                gtag('event', 'installApp', {
+                    'element': 'btn',
+                    'description': 'installApp',
+                });
+            },
+        },
+        {
+            element: document.getElementById('theEndModalCloseBtn'),
+            listener: () => {
+                gtag('event', 'theEndModalCloseBtn', {
+                    'element': 'btn',
+                    'description': 'theEndModalCloseBtn',
+                });
+            },
+        },
+        {
+            element: document.getElementById('theEnd'),
+            listener: () => {
+                gtag('event', 'theEndModalCloseField', {
+                    'element': 'field',
+                    'description': 'theEndModalCloseField',
+                });
+            },
+        },
+    ];
+
     constructor () {
         this.getScript()
     }
@@ -48,12 +105,22 @@ export default class GoogleAnalytics {
         return script
     }
 
+    addAnalyticsListener () {
+        for (let i=0; i < this.#analiticListeners.length; i++) {
+            if (this.#analiticListeners[i].element) {
+                this.#analiticListeners[i].element.addEventListener('click', this.#analiticListeners[i].listener);
+            }
+        }
+    }
+
     getScript () {
         const trackingId = this.getTrackingId();
         
         if (trackingId) {
             document.head.insertAdjacentElement("beforeend", this.getScript1(trackingId));
             document.head.insertAdjacentElement("beforeend", this.getScript2(trackingId));
+
+            this.addAnalyticsListener();
         }
     }
 };
