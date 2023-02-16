@@ -8,11 +8,12 @@
     "deploy_to_netlify": "netlify deploy --dir=dist --prod && netlify sites:list && netlify status",
     "deploy_to_vercel": "vercel --prod && vercel list",
     "deploy_to_surge": "surge --project ./dist --domain https://findmards.surge.sh && surge list",
-    "build": "npm run build_prod",
+    "build": "npm run copy_index_as_200 && npm run build_prod",
     "build_prod": "cross-env NODE_ENV=production webpack --mode production",
     "build_dev": "cross-env NODE_ENV=development webpack --mode development",
     "build_dev_watch": "cross-env NODE_ENV=development webpack --mode development --watch",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
+    "copy_index_as_200": "copy src\\index.html public\\200.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

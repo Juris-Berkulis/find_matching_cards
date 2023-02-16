@@ -1,12 +1,12 @@
-const path = require('path')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin')
-const TerserWebpackPlugin = require('terser-webpack-plugin')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const CopyPlugin = require("copy-webpack-plugin")
-const WorkboxPlugin = require('workbox-webpack-plugin')
+const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 //* Если переменная среды ровна 'development', то мы находимся в режиме разработки, а иначе - в режиме продакшн:
 const isDev = process.env.NODE_ENV === 'development';
@@ -36,7 +36,7 @@ function* generateNumber() {
     while (true) {
         yield i++;
     }
-}
+};
 
 const generator = generateNumber();
 
@@ -48,7 +48,7 @@ const getHeshForClassName = (localName) => {
     }
     
     return classesNames[localName]
-}
+};
 
 const getFilename = (fileExtension) => {
     return isDev ? `[name].${fileExtension}` : `[name].[hash].${fileExtension}`
@@ -167,7 +167,7 @@ const faviconsConfig = {
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
-    mode: 'development',
+    mode: process.env.NODE_ENV,
     entry: {
         main: './js/main.js'
     },
@@ -178,7 +178,7 @@ module.exports = {
     resolve: {
         extensions: [
             '.js', 
-            'json',
+            '.json',
         ],
     },
     optimization: optimization(),
@@ -202,8 +202,8 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {
-                    from: '../public', 
-                    to: '../dist'
+                    from: '../public/**/*', 
+                    to: '[name][ext]'
                 },
             ],
         }),
@@ -222,7 +222,7 @@ module.exports = {
             //? navigationPreload: true, //* Следует ли включать предварительную загрузку навигации в сгенерированном сервис-воркере. Если установлено значение true, вы также должны использовать runtimeCaching для настройки соответствующей стратегии ответа, которая будет соответствовать запросам навигации и использовать предварительно загруженный ответ.
             //? runtimeCaching: [{...}], //* При использовании инструментов сборки Workbox для создания сервисного работника вы можете указать одну или несколько конфигураций кэширования во время выполнения. Затем они преобразуются в вызовы workbox-routing.registerRoute с использованием заданной вами конфигурации сопоставления и обработчика.
             skipWaiting: true, //* Добавлять ли безусловный вызов skipWaiting() в сгенерированный сервис-воркер. Если false, вместо этого будет добавлен прослушиватель сообщений, позволяющий клиентским страницам запускать skipWaiting() путем вызова postMessage({type: 'SKIP_WAITING'}) для ожидающего работника службы.
-            exclude: [/robots\.txt/, /_redirects/, /vercel\.json/], //* Один или несколько спецификаторов, используемых для исключения ресурсов из манифеста предварительного кэширования. Это интерпретируется по тем же правилам, что и стандартная опция исключения webpack. Если не указано, значение по умолчанию — [/\.map$/, /^manifest.*\.js$].
+            //? exclude: [/robots\.txt/, /_redirects/, /vercel\.json/], //* Один или несколько спецификаторов, используемых для исключения ресурсов из манифеста предварительного кэширования. Это интерпретируется по тем же правилам, что и стандартная опция исключения webpack. Если не указано, значение по умолчанию — [/\.map$/, /^manifest.*\.js$].
             sourcemap: isDev ? true : false, //* Нужно ли создавать исходную карту для сгенерированных файлов сервис-воркеров.
         }),
     ],

@@ -2,7 +2,9 @@ import InitialHtml from './InitialHtml';
 import GameManager from './GameManager';
 import * as serviceWorkerRegistration from '../ServiceWorker/serviceWorkerRegistration';
 import {pwaStatus} from '../ServiceWorker/pwaInstall';
+import GoogleAnalytics from '../analytics/GoogleAnalitics';
 
+new GoogleAnalytics();
 new InitialHtml();
 
 const board = document.getElementById('board');
