@@ -25,9 +25,33 @@ export default class GoogleAnalytics {
             },
         },
         {
-            element: document.getElementById('cardsCountPanel'),
+            element: document.getElementById('cardsCountBtn10'),
             listener: () => {
-                this.listenerFunc('levelsPanel', 'btnsPanel', 'levelsPanel');
+                this.listenerFunc('10CardsLevel', 'Btn', 'set_level_with_10_cards');
+            },
+        },
+        {
+            element: document.getElementById('cardsCountBtn20'),
+            listener: () => {
+                this.listenerFunc('20CardsLevel', 'Btn', 'set_level_with_20_cards');
+            },
+        },
+        {
+            element: document.getElementById('cardsCountBtn30'),
+            listener: () => {
+                this.listenerFunc('30CardsLevel', 'Btn', 'set_level_with_30_cards');
+            },
+        },
+        {
+            element: document.getElementById('cardsCountBtn40'),
+            listener: () => {
+                this.listenerFunc('40CardsLevel', 'Btn', 'set_level_with_40_cards');
+            },
+        },
+        {
+            element: document.getElementById('board'),
+            listener: () => {
+                this.listenerFunc('boardWithCards', 'field', 'board_with_cards');
             },
         },
         {

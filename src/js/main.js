@@ -102,7 +102,12 @@ const openCards = () => {
 
 rememberFieldButton.addEventListener('click', openCards);
 
-//* Register a service-worker:
-serviceWorkerRegistration.register();
+if (process.env.NODE_ENV === 'production') {
+    //* Register a service-worker:
+    serviceWorkerRegistration.register();
+} else {
+    //* Do not register a service-worker:
+    serviceWorkerRegistration.unregister();
+}
 
 pwaStatus();

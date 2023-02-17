@@ -4,11 +4,11 @@ export default class InitialHtml {
     #html = `
         <div class="${styles.main}">
         <div class="${styles.controlPanel}" id="controlPanel">
-            <div id="cardsCountPanel" class="${styles.cardsCountPanel}">
-                <button class="${styles.cardsCountBtn}">10</button>
-                <button class="${styles.cardsCountBtn}">20</button>
-                <button class="${styles.cardsCountBtn}">30</button>
-                <button class="${styles.cardsCountBtn}">40</button>
+            <div class="${styles.cardsCountPanel}" id="cardsCountPanel">
+                <button class="${styles.cardsCountBtn}" id="cardsCountBtn10">10</button>
+                <button class="${styles.cardsCountBtn}" id="cardsCountBtn20">20</button>
+                <button class="${styles.cardsCountBtn}" id="cardsCountBtn30">30</button>
+                <button class="${styles.cardsCountBtn}" id="cardsCountBtn40">40</button>
             </div>
             <button class="${styles.startGameBtn}" id="startGame">Новая игра</button>
             <button class="${styles.startGameBtn}" id="rememberField">Запомнить</button>

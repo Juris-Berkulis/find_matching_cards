@@ -11,7 +11,7 @@ export default class GameManager {
     #secondSelectedCard = null;
     #attemptNumber = 0;
     #failCount = 0;
-    #cardsCount = 20;
+    #cardsCount = 10;
     #cardsCountBtnsPanel = document.getElementById('cardsCountPanel');
     #elapsedTimeElement = document.getElementById('elapsedTime');
     #elapsedTime = 0;
@@ -45,7 +45,7 @@ export default class GameManager {
     };
 
     set cardsCount (value) {
-        return this.#cardsCount = value;
+        this.#cardsCount = value;
     }
 
     shuffleAndDeal () {
