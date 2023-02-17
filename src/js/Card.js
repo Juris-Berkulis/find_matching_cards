@@ -11,6 +11,7 @@ export default class Card {
         this.#domElement = document.createElement('div');
         this.#domElement.classList.add(`${styles.card}`);
         this.#domElement.style.backgroundColor = `${this.getReverseSideOfTheCard}`;
+        this.#domElement.isCard = true;
         this.#domElement.connectedCard = this;
     };
 
@@ -32,9 +33,11 @@ export default class Card {
         if (this.#isShowCard) {
             this.#domElement.style.backgroundColor = this.getFrontSideOfTheCard;
             this.#domElement.classList.add(`${styles.cardOpen}`);
+            this.#domElement.cardOpen = true;
         } else {
             this.#domElement.style.backgroundColor = this.getReverseSideOfTheCard;
             this.#domElement.classList.remove(`${styles.cardOpen}`);
+            this.#domElement.cardOpen = false;
         }
     };
 

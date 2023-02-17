@@ -50,8 +50,12 @@ export default class GoogleAnalytics {
         },
         {
             element: document.getElementById('board'),
-            listener: () => {
-                this.listenerFunc('boardWithCards', 'field', 'board_with_cards');
+            listener: (event) => {
+                const eventTarget = event.target;
+
+                if (eventTarget.isCard && !eventTarget.cardOpen) {
+                    this.listenerFunc('OpenCard', 'Card', 'open_card');
+                }
             },
         },
         {
