@@ -48,9 +48,7 @@ export default class Desc {
         return (30 + Math.random() * (255 - 30)).toFixed(0)
     }
 
-    createLinearGradient () {
-        const degrees = (Math.random() * 360).toFixed(0);
-        const colorsCount = +(3 + Math.random() * (4 - 3)).toFixed(0);
+    createGradient (colorsCount, switchColorTransitionPoint) {
         const listWithColors = [];
         const listWithColorTransitionPoint = [];
 
@@ -63,9 +61,9 @@ export default class Desc {
 
             let colorTransitionPoint;
 
-            if (i === 1) {
+            if (switchColorTransitionPoint && i === 1) {
                 colorTransitionPoint = 0;
-            } else if (i === colorsCount) {
+            } else if (switchColorTransitionPoint && i === colorsCount) {
                 colorTransitionPoint = 100;
             } else {
                 colorTransitionPoint = +(10 + Math.random() * 80).toFixed(0);
@@ -82,38 +80,22 @@ export default class Desc {
             listWithColorTransitions.push(`${listWithColors[j]} ${listWithColorTransitionPoint[j]}%`);
         }
 
-        return `linear-gradient(${degrees}deg, ${listWithColorTransitions.join(', ')})`
+        return listWithColorTransitions
+    }
+
+    createLinearGradient () {
+        const degrees = (Math.random() * 360).toFixed(0);
+        const colorsCount = +(3 + Math.random() * (4 - 3)).toFixed(0);
+
+        return `linear-gradient(${degrees}deg, ${this.createGradient(colorsCount, true).join(', ')})`
     }
 
     createRadialGradient () {
         const centerX = (Math.random() * 100).toFixed(0);
         const centerY = (Math.random() * 100).toFixed(0);
-
         const colorsCount = +(3 + Math.random() * (4 - 3)).toFixed(0);
-        const listWithColors = [];
-        const listWithColorTransitionPoint = [];
 
-        for (let i = 1; i <= colorsCount; i++) {
-            const red = this.createColorPart();
-            const green = this.createColorPart();
-            const blue = this.createColorPart();
-
-            listWithColors.push(`rgb(${red}, ${green}, ${blue})`);
-
-            const colorTransitionPoint = +(10 + Math.random() * 80).toFixed(0);
-
-            listWithColorTransitionPoint.push(colorTransitionPoint);
-        }
-
-        listWithColorTransitionPoint.sort((a, b) => a - b);
-
-        const listWithColorTransitions = [];
-
-        for (let j = 0; j < colorsCount; j++) {
-            listWithColorTransitions.push(`${listWithColors[j]} ${listWithColorTransitionPoint[j]}%`);
-        }
-
-        return `radial-gradient(at ${centerX}% ${centerY}%, ${listWithColorTransitions.join(', ')})`
+        return `radial-gradient(at ${centerX}% ${centerY}%, ${this.createGradient(colorsCount, false).join(', ')})`
     }
 
     buildListWithFrontSidesOfTheCards () {
