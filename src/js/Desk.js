@@ -4,11 +4,11 @@ export default class Desc {
     #cardsCount;
     #frontSidesOfTheCards = [
         'linear-gradient(0deg, red, red)', 
-        'linear-gradient(0deg, yellow, yellow)', 
         'linear-gradient(0deg, green, green)', 
         'linear-gradient(0deg, cyan, cyan)', 
-        'linear-gradient(0deg, blue, blue)', 
         'linear-gradient(0deg, orange, orange)', 
+        'linear-gradient(0deg, blue, blue)', 
+        'linear-gradient(0deg, yellow, yellow)', 
         'linear-gradient(0deg, blueviolet, blueviolet)', 
         'linear-gradient(0deg, azure, azure)', 
         'linear-gradient(0deg, brown, brown)', 
@@ -33,9 +33,18 @@ export default class Desc {
 
     //* Вариант 2:
     constructor (cardsCount) {
-        this.buildListWithFrontSidesOfTheCards();
         this.#cardsCount = cardsCount;
-        this.#frontSidesOfTheCards.sort(this.randomSort).length = this.#cardsCount / 2;
+
+        if (this.#cardsCount >= 20) {
+            if (this.#cardsCount >= 30) {
+                this.buildListWithFrontSidesOfTheCards();
+            }
+
+            this.#frontSidesOfTheCards.sort(this.randomSort);
+        }
+
+        this.#frontSidesOfTheCards.length = this.#cardsCount / 2;
+
         this.cards = [
             ...this.#frontSidesOfTheCards, 
             ...this.#frontSidesOfTheCards,
