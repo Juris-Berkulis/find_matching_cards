@@ -35,7 +35,7 @@ export default class Desc {
     constructor (cardsCount) {
         this.buildListWithFrontSidesOfTheCards();
         this.#cardsCount = cardsCount;
-        this.#frontSidesOfTheCards.length = this.#cardsCount / 2;
+        this.#frontSidesOfTheCards.sort(this.randomSort).length = this.#cardsCount / 2;
         this.cards = [
             ...this.#frontSidesOfTheCards, 
             ...this.#frontSidesOfTheCards,
@@ -53,8 +53,12 @@ export default class Desc {
         }
     }
 
+    randomSort () {
+        return Math.random() - 0.5
+    }
+
     shuffleCards () {
-        this.cards.sort(() => Math.random() - 0.5);
+        this.cards.sort(this.randomSort);
     };
 
     removeCard (card) {
