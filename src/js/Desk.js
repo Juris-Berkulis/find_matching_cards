@@ -3,23 +3,23 @@ import Card from './Card';
 export default class Desc {
     #cardsCount;
     #frontSidesOfTheCards = [
-        'red', 
-        'yellow', 
-        'green', 
-        'cyan', 
-        'blue', 
-        'orange', 
-        'blueviolet', 
-        'azure', 
-        'brown', 
-        'pink',
-        'lime',
-        'deeppink',
-        'burlywood',
-        'olive',
-        'saddlebrown',
-        'midnightblue',
-        'palegreen',
+        'linear-gradient(0deg, red, red)', 
+        'linear-gradient(0deg, yellow, yellow)', 
+        'linear-gradient(0deg, green, green)', 
+        'linear-gradient(0deg, cyan, cyan)', 
+        'linear-gradient(0deg, blue, blue)', 
+        'linear-gradient(0deg, orange, orange)', 
+        'linear-gradient(0deg, blueviolet, blueviolet)', 
+        'linear-gradient(0deg, azure, azure)', 
+        'linear-gradient(0deg, brown, brown)', 
+        'linear-gradient(0deg, pink, pink)', 
+        'linear-gradient(0deg, lime, lime)', 
+        'linear-gradient(0deg, deeppink, deeppink)', 
+        'linear-gradient(0deg, burlywood, burlywood)', 
+        'linear-gradient(0deg, olive, olive)', 
+        'linear-gradient(0deg, saddlebrown, saddlebrown)', 
+        'linear-gradient(0deg, midnightblue, midnightblue)', 
+        'linear-gradient(0deg, palegreen, palegreen)', 
     ];
 
     //* Вариант 1:
@@ -44,12 +44,87 @@ export default class Desc {
         });
     };
 
+    createColorPart () {
+        return (30 + Math.random() * (255 - 30)).toFixed(0)
+    }
+
+    createLinearGradient () {
+        const degrees = (Math.random() * 360).toFixed(0);
+        const colorsCount = +(3 + Math.random() * (4 - 3)).toFixed(0);
+        const listWithColors = [];
+        const listWithColorTransitionPoint = [];
+
+        for (let i = 1; i <= colorsCount; i++) {
+            const red = this.createColorPart();
+            const green = this.createColorPart();
+            const blue = this.createColorPart();
+
+            listWithColors.push(`rgb(${red}, ${green}, ${blue})`);
+
+            let colorTransitionPoint;
+
+            if (i === 1) {
+                colorTransitionPoint = 0;
+            } else if (i === colorsCount) {
+                colorTransitionPoint = 100;
+            } else {
+                colorTransitionPoint = +(10 + Math.random() * 80).toFixed(0);
+            }
+
+            listWithColorTransitionPoint.push(colorTransitionPoint);
+        }
+
+        listWithColorTransitionPoint.sort((a, b) => a - b);
+
+        const listWithColorTransitions = [];
+
+        for (let j = 0; j < colorsCount; j++) {
+            listWithColorTransitions.push(`${listWithColors[j]} ${listWithColorTransitionPoint[j]}%`);
+        }
+
+        return `linear-gradient(${degrees}deg, ${listWithColorTransitions.join(', ')})`
+    }
+
+    createRadialGradient () {
+        const centerX = (Math.random() * 100).toFixed(0);
+        const centerY = (Math.random() * 100).toFixed(0);
+
+        const colorsCount = +(3 + Math.random() * (4 - 3)).toFixed(0);
+        const listWithColors = [];
+        const listWithColorTransitionPoint = [];
+
+        for (let i = 1; i <= colorsCount; i++) {
+            const red = this.createColorPart();
+            const green = this.createColorPart();
+            const blue = this.createColorPart();
+
+            listWithColors.push(`rgb(${red}, ${green}, ${blue})`);
+
+            const colorTransitionPoint = +(10 + Math.random() * 80).toFixed(0);
+
+            listWithColorTransitionPoint.push(colorTransitionPoint);
+        }
+
+        listWithColorTransitionPoint.sort((a, b) => a - b);
+
+        const listWithColorTransitions = [];
+
+        for (let j = 0; j < colorsCount; j++) {
+            listWithColorTransitions.push(`${listWithColors[j]} ${listWithColorTransitionPoint[j]}%`);
+        }
+
+        return `radial-gradient(at ${centerX}% ${centerY}%, ${listWithColorTransitions.join(', ')})`
+    }
+
     buildListWithFrontSidesOfTheCards () {
         for (let i=0; i < 3; i++) {
-            const red = (Math.random() * 255).toFixed(0);
-            const green = (Math.random() * 255).toFixed(0);
-            const blue = (Math.random() * 255).toFixed(0);
-            this.#frontSidesOfTheCards.push(`rgb(${red}, ${green}, ${blue})`);
+            const switchGradient = +(Math.random() * 1).toFixed(0);
+
+            if (switchGradient === 0) {
+                this.#frontSidesOfTheCards.push(this.createLinearGradient());
+            } else {
+                this.#frontSidesOfTheCards.push(this.createRadialGradient());
+            }
         }
     }
 

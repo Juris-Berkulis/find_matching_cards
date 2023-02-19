@@ -10,13 +10,13 @@ export default class Card {
 
         this.#domElement = document.createElement('div');
         this.#domElement.classList.add(`${styles.card}`);
-        this.#domElement.style.backgroundColor = `${this.getReverseSideOfTheCard}`;
+        this.#domElement.style.backgroundImage = `${this.getReverseSideOfTheCard}`;
         this.#domElement.isCard = true;
         this.#domElement.connectedCard = this;
     };
 
     get getReverseSideOfTheCard () {
-        return '#555555'
+        return 'linear-gradient(0deg, #555555, #555555)'
     };
 
     get getFrontSideOfTheCard () {
@@ -31,11 +31,11 @@ export default class Card {
         this.#isShowCard = !this.#isShowCard;
 
         if (this.#isShowCard) {
-            this.#domElement.style.backgroundColor = this.getFrontSideOfTheCard;
+            this.#domElement.style.backgroundImage = this.getFrontSideOfTheCard;
             this.#domElement.classList.add(`${styles.cardOpen}`);
             this.#domElement.cardOpen = true;
         } else {
-            this.#domElement.style.backgroundColor = this.getReverseSideOfTheCard;
+            this.#domElement.style.backgroundImage = this.getReverseSideOfTheCard;
             this.#domElement.classList.remove(`${styles.cardOpen}`);
             this.#domElement.cardOpen = false;
         }
