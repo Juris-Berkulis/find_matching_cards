@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "deploy": "npm run build && npm run deploy_to_netlify && npm run deploy_to_vercel && npm run deploy_to_surge",
+    "deploy": "npm run build && npm run deploy_to_netlify && npm run deploy_to_vercel && npm run deploy_to_surge && npm run get_date",
     "deploy_to_netlify": "netlify deploy --dir=dist --prod && netlify sites:list && netlify status",
     "deploy_to_vercel": "vercel --prod && vercel list",
     "deploy_to_surge": "surge --project ./dist --domain https://findmards.surge.sh && surge list",
@@ -14,6 +14,7 @@
     "build_dev_watch": "cross-env NODE_ENV=development webpack --mode development --watch",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
     "copy_index_as_200": "copy src\\index.html public\\200.html",
+    "get_date": "node getDate.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

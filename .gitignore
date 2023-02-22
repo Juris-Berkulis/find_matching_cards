@@ -2,6 +2,7 @@ node_modules
 info
 favicon/favicon_original.jpg
 .env
+getDate.js
 
 # Local Netlify folder
 .netlify
