@@ -10,6 +10,16 @@ body {
     max-height: stretch;
 }
 
+@media all and (display-mode: standalone) {
+    html {
+        height: auto;
+    }
+    
+    body {
+        height: 100vh;
+    }
+}
+
 @keyframes animation__bg__waves {
     @for $i from 0 through 100 {
         #{$i * 1%} {
@@ -56,7 +66,7 @@ button {
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     max-height: stretch;
     width: 100vw;
     background-color: #cccccc;
