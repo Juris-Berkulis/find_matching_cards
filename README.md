@@ -18,7 +18,7 @@ To use the Weatemp app, simply go to any of the URLs:
 - **[Findmards](https://findmards.vercel.app/)** on vercel;
 - **[Findmards](https://findmards.surge.sh/)** on surge.
 
-Clicking on one of the URLs-above will open the web-version of the Findmards app, and if your browser supports app installation, you will be prompted to install the weather app on your device. Also, you can install the application at any time using the button located in the dialog box containing the results of the played game, or continue using it on the site. Application size: **<1 MB**.
+Clicking on one of the URLs-above will open the web-version of the Findmards game, and if your browser supports game installation, you will be prompted to install the Findmards game on your device. Also, you can install the application at any time using the button located in the dialog box that appears at the end of the game and containing the results of the played game, or continue using Findmards game by the site. Application size: **<1 MB**.
 
 ## APP FUNCTIONALITY:
 
